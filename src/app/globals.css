@@ -1,0 +1,167 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "react-day-picker/style.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --navy: #162640;
+  --royal: #0b168f;
+  --gold: #c79a32;
+  --white: #ffffff;
+  --warm: #f7f7f5;
+  --ink: #172033;
+
+  --background: #f7f7f5;
+  --foreground: #172033;
+  --card: #ffffff;
+  --card-foreground: #172033;
+  --popover: #ffffff;
+  --popover-foreground: #172033;
+  --primary: #162640;
+  --primary-foreground: #ffffff;
+  --secondary: #ecece8;
+  --secondary-foreground: #162640;
+  --muted: #ecece8;
+  --muted-foreground: #5c6573;
+  --accent: #c79a32;
+  --accent-foreground: #162640;
+  --destructive: #c4453c;
+  --destructive-foreground: #ffffff;
+  --border: #dddcd6;
+  --input: #dddcd6;
+  --ring: #0b168f;
+  --royal-foreground: #ffffff;
+  --inverted: #172033;
+  --inverted-foreground: #ffffff;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-gold: var(--gold);
+  --color-warm: var(--warm);
+  --color-ink: var(--ink);
+  --color-royal: var(--royal);
+  --color-royal-foreground: var(--royal-foreground);
+  --color-inverted: var(--inverted);
+  --color-inverted-foreground: var(--inverted-foreground);
+
+  --color-primary-50: #f4f6f8;
+  --color-primary-100: #e4e8ee;
+  --color-primary-200: #c5ced9;
+  --color-primary-300: #9aabbd;
+  --color-primary-400: #6b8299;
+  --color-primary-500: #456078;
+  --color-primary-600: #2e4560;
+  --color-primary-700: #1e334d;
+  --color-primary-800: #162640;
+  --color-primary-900: #122033;
+  --color-primary-950: #0e1a2b;
+
+  --color-royal-50: #eef0fc;
+  --color-royal-100: #d5d9f8;
+  --color-royal-200: #abb3f0;
+  --color-royal-300: #7a86e6;
+  --color-royal-400: #4a58d4;
+  --color-royal-500: #2434c0;
+  --color-royal-600: #1220a8;
+  --color-royal-700: #0e1a9c;
+  --color-royal-800: #0b168f;
+  --color-royal-900: #08106c;
+  --color-royal-950: #050a48;
+
+  --color-gold-50: #fbf6eb;
+  --color-gold-100: #f5ebd3;
+  --color-gold-200: #ebd7a6;
+  --color-gold-300: #d4b056;
+  --color-gold-400: #c79a32;
+  --color-gold-500: #c79a32;
+  --color-gold-600: #a67e24;
+  --color-gold-700: #7d5e1b;
+  --color-gold-800: #544012;
+  --color-gold-900: #3a2c0c;
+  --color-gold-950: #241c08;
+
+  --color-neutral-50: #f7f7f5;
+  --color-neutral-100: #ecece8;
+  --color-neutral-200: #dddcd6;
+  --color-neutral-300: #c4c3bb;
+  --color-neutral-400: #8d8c86;
+  --color-neutral-500: #6b6a64;
+  --color-neutral-600: #4a4e58;
+  --color-neutral-700: #2f3542;
+  --color-neutral-800: #172033;
+  --color-neutral-900: #162640;
+  --color-neutral-950: #0e1a2b;
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), ui-serif, Georgia, "Times New Roman", serif;
+  --font-heading: var(--font-source-serif), ui-serif, Georgia, serif;
+  --font-display: var(--font-playfair), var(--font-source-serif), ui-serif, Georgia, serif;
+  --font-script: var(--font-great-vibes), ui-serif, cursive;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth overflow-x-clip;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased overflow-x-clip;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif tracking-tight text-foreground;
+  }
+}
+
+@utility heading {
+  font-family: var(--font-heading);
+}
+
+.rdp-root {
+  --rdp-accent-color: var(--primary);
+  --rdp-accent-background-color: var(--muted);
+  --rdp-day-height: 2.25rem;
+  --rdp-day-width: 2.25rem;
+}
