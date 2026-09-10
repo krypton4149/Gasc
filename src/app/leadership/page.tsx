@@ -53,11 +53,22 @@ export default function LeadershipPage() {
                 className="grid gap-8 border-b border-[#E8E4DC] py-10 sm:py-12 md:grid-cols-[minmax(14rem,20rem)_minmax(0,1fr)] md:gap-8 lg:grid-cols-[minmax(16rem,22rem)_minmax(0,1fr)] lg:gap-0 lg:py-14"
               >
                 <div className="lg:pr-12">
-                  <div className="flex h-12 w-12 items-center justify-center bg-navy">
-                    <span className="font-display text-lg italic leading-none text-gold">
-                      {member.initials}
-                    </span>
-                  </div>
+                  {"photo" in member && member.photo ? (
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={160}
+                      height={160}
+                      unoptimized
+                      className="size-20 rounded-full object-cover sm:size-24"
+                    />
+                  ) : (
+                    <div className="flex h-12 w-12 items-center justify-center bg-navy">
+                      <span className="font-display text-lg italic leading-none text-gold">
+                        {member.initials}
+                      </span>
+                    </div>
+                  )}
                   <h2 className="mt-5 font-display text-[1.65rem] font-bold leading-tight text-navy sm:text-[1.85rem]">
                     {member.name}
                   </h2>

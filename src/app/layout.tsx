@@ -71,7 +71,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${manrope.variable} ${sourceSerif.variable} ${playfair.variable} ${greatVibes.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col pb-[calc(5.75rem+env(safe-area-inset-bottom))] font-sans md:pb-0">
+      <body className="flex min-h-full flex-col font-sans">
         <Providers>
           <Header />
           <main className="flex-1">{children}</main>

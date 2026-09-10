@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation"
 import {
   Award,
   Briefcase,
-  CalendarCheck,
   ChevronLeft,
   Home,
   Landmark,
@@ -18,13 +17,6 @@ import { useEffect, useState } from "react"
 
 import { navItems, siteConfig } from "@/lib/site"
 import { cn } from "@/lib/utils"
-
-const mobileTabs = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/services", label: "Services", icon: Briefcase },
-  { href: "/book", label: "Book", icon: CalendarCheck },
-  { href: "/contact", label: "Contact", icon: Mail },
-]
 
 const drawerIcons = {
   "/": Home,
@@ -254,38 +246,6 @@ export function Header() {
           </button>
         </aside>
       </div>
-
-      <nav
-        aria-label="Mobile"
-        className="fixed bottom-[max(0.75rem,env(safe-area-inset-bottom))] left-1/2 z-40 flex w-[min(24rem,calc(100%-1.5rem))] -translate-x-1/2 items-stretch gap-0.5 rounded-2xl bg-card p-1.5 shadow-lg ring-1 ring-border md:hidden"
-      >
-        {mobileTabs.map((item) => {
-          const active =
-            item.href === "/"
-              ? pathname === "/"
-              : pathname.startsWith(item.href)
-          const Icon = item.icon
-
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-label={item.label}
-              className={cn(
-                "flex min-h-12 min-w-0 flex-1 flex-col items-center justify-center gap-0.5 rounded-xl px-1 py-1.5 transition-colors",
-                active
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:bg-secondary",
-              )}
-            >
-              <Icon className="size-5" />
-              <span className="text-[9px] font-medium uppercase tracking-[0.08em]">
-                {item.label}
-              </span>
-            </Link>
-          )
-        })}
-      </nav>
     </>
   )
 }

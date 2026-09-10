@@ -195,6 +195,7 @@ export const leadershipTeam = [
     name: "Anmol Gupta",
     role: "Chairman",
     focus: "Governance — Strategy — Client Stewardship",
+    photo: "/images/p1.png",
     qualifications: [
       "Chairman, Gupta Associate Consultancy",
       "Strategic Leadership & Institutional Governance",
@@ -208,6 +209,7 @@ export const leadershipTeam = [
     name: "Pratham Gupta",
     role: "Chief Executive Officer",
     focus: "Operations — Growth — Integrated Advisory",
+    photo: "/images/p2.png",
     qualifications: [
       "Chief Executive Officer, GACS",
       "Multidisciplinary Practice Leadership",
