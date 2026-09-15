@@ -84,7 +84,7 @@ export const whyValues = [
   "Confidential Advisory",
   "Client-First Approach",
   "Integrated Expertise",
-  "Trusted Since 2009",
+  "Trusted Since 2017",
   "Absolute Integrity",
 ] as const
 
@@ -93,29 +93,29 @@ export const aboutStory = {
   heading:
     "A practice built on long-term client relationships, not transactions.",
   columns: [
-    "GACS brings together seasoned professionals from the fields of law, chartered accountancy and company secretarial practice. Our founding belief is that every client deserves clarity — in language they understand, with advice that works in the real world.",
-    "Over fifteen years, we have served individuals navigating personal legal matters, small businesses building their compliance foundation, and corporations requiring sophisticated multi-jurisdictional advisory. Each engagement deepens our understanding of what clients truly need.",
+    "Gupta Associate Consultancy Service was formed as a proprietorship in 2017 by Anmol Gupta. The practice began with accounting and taxation, and has grown into an integrated advisory firm — serving individuals and businesses under one roof, with advice that works in the real world.",
+    "The firm later added two senior professionals, CA Nitin Gupta and Adv. Deepak Kumar Jain. It is supported by four semi-qualified members — Pratham Gupta, Ashish Gupta, Kshitiz Jain and Piyush Gupta — each contributing to the GACS standard of care.",
   ],
   stats: [
-    { value: "15+", label: "Years of Practice" },
-    { value: "500+", label: "Clients Served" },
-    { value: "98%", label: "Satisfaction Rate" },
+    { value: "9+", label: "Years of Practice" },
+    { value: "2000+", label: "Clients Served" },
+    { value: "100%", label: "Satisfaction Rate" },
     { value: "4", label: "Integrated Practice Areas" },
   ],
 } as const
 
 export const heroStats = [
-  { value: "15+", label: "Years Practice" },
-  { value: "500+", label: "Clients Served" },
+  { value: "9+", label: "Years Practice" },
+  { value: "2000+", label: "Clients Served" },
   { value: "4", label: "Practice Areas" },
-  { value: "98%", label: "Satisfaction Rate" },
+  { value: "100%", label: "Satisfaction Rate" },
 ] as const
 
 export const whyStats = [
-  { value: "15+", label: "Years of Practice" },
-  { value: "500+", label: "Clients Served" },
+  { value: "9+", label: "Years of Practice" },
+  { value: "2000+", label: "Clients Served" },
   { value: "4", label: "Practice Areas" },
-  { value: "98%", label: "Client Retention" },
+  { value: "100%", label: "Client Retention" },
 ] as const
 
 export const testimonials = [
@@ -124,30 +124,35 @@ export const testimonials = [
       "GACS supports our documentation, compliance and advisory needs with discipline and discretion. Their integrated legal and financial view keeps matters moving without delay.",
     name: "PNB",
     role: "Punjab National Bank",
+    logo: "/images/pnb.png",
   },
   {
     quote:
       "From structuring to ongoing tax and legal compliance, GACS has been a reliable partner for Orchid Green. Clear advice, prompt response, and genuine care for the business.",
     name: "Orchid Green",
-    role: "Hospitality & Real Estate",
+    role: "Mr. Pradeep Mittal",
+    logo: "/images/orchid.png",
   },
   {
     quote:
       "The tax advisory from GACS transformed our compliance position. Proactive, clear and always ahead of regulatory changes. We recommend them without reservation.",
     name: "Lotus Light",
-    role: "Lighting & Electrical",
+    role: "Mr. Ajay Mittal & Mr. Nalin Bansal",
+    logo: "/images/lotus.png",
   },
   {
     quote:
       "Their finance, accounting and commercial advisory gave our showroom the clarity we needed. Decisions are faster, the books are sound, and we know where we stand.",
     name: "Honda Showroom",
     role: "Automobile Dealership",
+    logo: "/images/honda.png",
   },
   {
     quote:
       "From incorporation to day-to-day legal and tax compliance, GACS has been with us at every step. Professional, candid, and a true long-term partner for Shri Ji Lights.",
     name: "Shri Ji Lights",
-    role: "Lighting Solutions",
+    role: "Mr. Manoj Bansal",
+    logo: "/images/shri.png",
   },
 ] as const
 
@@ -193,43 +198,46 @@ export const leadershipTeam = [
   {
     initials: "AG",
     name: "Anmol Gupta",
-    role: "Chairman",
-    focus: "Governance — Strategy — Client Stewardship",
+    role: "Founder & Chairperson",
+    focus: "GST — Income Tax — VAT & Custom — Finance",
     photo: "/images/p1.png",
-    qualifications: [
-      "Chairman, Gupta Associate Consultancy",
-      "Strategic Leadership & Institutional Governance",
-      "Long-Term Client Relationship Stewardship",
-      "Practice Vision & Ethical Oversight",
+    qualifications: ["B.A. LL.B."],
+    specialFields: [
+      "Taxation Industry — GST, Income Tax, VAT & Custom",
+      "Finance Consultancy and SIB Cases",
+      "Income Tax & GST Cases & Other",
     ],
-    bio: "As Chairman, Anmol Gupta provides the governing vision for GACS — setting the standard for integrity, discretion and long-term client care. He guides the firm’s direction across law, taxation, finance and corporate advisory, ensuring every engagement is measured by outcomes, not activity, and that the practice remains a trusted partner for the families and businesses it serves.",
+    bio: "Anmol Gupta is the Founder & Chairperson of GACS. He specialises in taxation — GST, income tax, VAT and custom — along with finance consultancy, SIB cases, and income tax and GST matters. He sets the standard for integrity, discretion and long-term client care, ensuring every engagement is measured by outcomes, not activity.",
   },
   {
     initials: "PG",
     name: "Pratham Gupta",
-    role: "Chief Executive Officer",
-    focus: "Operations — Growth — Integrated Advisory",
+    role: "Founder & CEO",
+    focus: "Investment — Litigation — Financing — Intellectual Property",
     photo: "/images/p2.png",
-    qualifications: [
-      "Chief Executive Officer, GACS",
-      "Multidisciplinary Practice Leadership",
-      "Client Experience & Delivery Oversight",
-      "Business Strategy & Institutional Growth",
+    qualifications: ["B.A. LL.B."],
+    specialFields: [
+      "Investment & Business Planning/Consultancy",
+      "Litigation and Consumer Matters",
+      "Financing",
+      "Society",
+      "Trust",
+      "TM & Other Intellectual Property & Others",
     ],
-    bio: "Pratham Gupta leads GACS as Chief Executive Officer, bringing the four practice areas together as one coordinated firm. He oversees day-to-day delivery, client experience and growth — so legal, tax, finance and corporate advice move in concert. His focus is practical execution: clear communication, dependable timelines, and advisory that works in the real world.",
+    bio: "Pratham Gupta is the Founder & CEO of GACS, bringing the four practice areas together as one coordinated firm. He advises on investment and business planning, litigation and consumer matters, financing, societies and trusts, and trademarks and other intellectual property. His focus is practical execution: clear communication, dependable timelines, and advisory that works in the real world.",
   },
   {
-    initials: "AV",
-    name: "CS Amit Verma",
-    role: "Associate — Corporate & Compliance",
-    focus: "Company Law — LLP — Secretarial Practice",
-    qualifications: [
-      "Company Secretary, ICSI",
-      "B.Com (Hons), Delhi University",
-      "Corporate Governance Specialist",
-      "MSME Advisory Expert",
+    initials: "DJ",
+    name: "Deepak Kumar Jain",
+    role: "Associate Partner",
+    focus: "Civil — Criminal — Family — Litigation",
+    photo: "/images/p3.png",
+    qualifications: ["B.Com", "LL.B."],
+    specialFields: [
+      "Civil, Criminal & Family Matters — Litigation Cases",
+      "Practicing since 2002",
     ],
-    bio: "CS Amit Verma specialises in corporate governance, company secretarial practice and comprehensive regulatory compliance management. From new incorporations to annual statutory filings, he ensures clients navigate every compliance obligation with precision and confidence — leaving no exposure, missing no deadline.",
+    bio: "Deepak Kumar Jain is Associate Partner at GACS, bringing more than two decades of courtroom and advisory experience to the firm. Qualified in commerce and law (B.Com, LL.B.), he practises across civil, criminal and family matters, with a primary focus on litigation. In practice since 2002, he has guided individuals and families through disputes, proceedings and sensitive personal matters with clarity and discretion. At GACS he works alongside the firm’s tax, finance and corporate teams so clients receive legal representation that is coordinated, practical and firmly grounded in their wider interests.",
   },
 ] as const
 

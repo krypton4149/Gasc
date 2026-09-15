@@ -3,10 +3,40 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { leadershipTeam, siteConfig } from "@/lib/site"
+import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
   title: "Leadership",
   description: `The professionals behind ${siteConfig.legalName}.`,
+}
+
+function MemberPortrait({
+  member,
+}: {
+  member: (typeof leadershipTeam)[number]
+}) {
+  if ("photo" in member && member.photo) {
+    return (
+      <div className="relative size-20 overflow-hidden rounded-full ring-1 ring-gold/80 sm:size-36 lg:size-52">
+        <Image
+          src={member.photo}
+          alt={member.name}
+          fill
+          unoptimized
+          sizes="208px"
+          className="scale-[1.18] object-cover object-[center_30%]"
+        />
+      </div>
+    )
+  }
+
+  return (
+    <div className="grid size-20 place-items-center rounded-full bg-navy ring-1 ring-gold/80 sm:size-36 lg:size-52">
+      <span className="font-display text-xl italic leading-none text-gold sm:text-3xl lg:text-4xl">
+        {member.initials}
+      </span>
+    </div>
+  )
 }
 
 export default function LeadershipPage() {
@@ -26,8 +56,8 @@ export default function LeadershipPage() {
 
         <div className="relative mx-auto grid min-h-[280px] max-w-6xl items-center gap-6 px-4 py-8 sm:min-h-[320px] sm:gap-8 sm:px-6 sm:py-10 lg:min-h-[360px] lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-12">
           <div>
-            <span aria-hidden className="block h-px w-10 bg-gold" />
-            <p className="mt-4 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+            <p className="flex items-center gap-3 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
+              <span aria-hidden className="h-px w-8 bg-gold" />
               Our Team
             </p>
             <h1 className="mt-4 font-display text-[1.75rem] font-bold leading-[1.12] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
@@ -45,94 +75,134 @@ export default function LeadershipPage() {
       </section>
 
       <section className="bg-[#F9F5F1]">
-        <div className="mx-auto max-w-[1400px] px-5 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16 xl:px-12">
-          <div className="border-t border-[#E8E4DC]">
-            {leadershipTeam.map((member) => (
-              <article
-                key={member.initials}
-                className="grid gap-8 border-b border-[#E8E4DC] py-10 sm:py-12 md:grid-cols-[minmax(14rem,20rem)_minmax(0,1fr)] md:gap-8 lg:grid-cols-[minmax(16rem,22rem)_minmax(0,1fr)] lg:gap-0 lg:py-14"
-              >
-                <div className="lg:pr-12">
-                  {"photo" in member && member.photo ? (
-                    <Image
-                      src={member.photo}
-                      alt={member.name}
-                      width={160}
-                      height={160}
-                      unoptimized
-                      className="size-20 rounded-full object-cover sm:size-24"
-                    />
-                  ) : (
-                    <div className="flex h-12 w-12 items-center justify-center bg-navy">
-                      <span className="font-display text-lg italic leading-none text-gold">
-                        {member.initials}
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+          <span aria-hidden className="block h-px w-10 bg-gold" />
+          <p className="mt-5 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-[#B0AAA0]">
+            Meet the Partners
+          </p>
+          <h2 className="mt-3 max-w-xl font-display text-[1.65rem] font-bold leading-[1.18] text-navy sm:text-4xl lg:text-[2.65rem]">
+            Leadership with
+            <span className="mt-1 block italic text-gold">Proven Practice</span>
+          </h2>
+          <p className="mt-5 max-w-2xl font-sans text-[15px] leading-7 text-[#8E8E8E]">
+            Founders and counsel who combine legal training with specialised
+            fields — taxation, investment, intellectual property and litigation
+            — under one roof.
+          </p>
+
+          <div className="mt-10 space-y-6 lg:mt-14 lg:space-y-8">
+            {leadershipTeam.map((member, index) => {
+              const reverse = index % 2 === 1
+              const number = String(index + 1).padStart(2, "0")
+
+              return (
+                <article
+                  key={member.initials}
+                  className="bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12"
+                >
+                  <div
+                    className={cn(
+                      "flex items-start gap-4 sm:gap-8 lg:items-center lg:gap-14",
+                      reverse && "lg:flex-row-reverse",
+                    )}
+                  >
+                    <div className="flex w-20 shrink-0 flex-col items-start gap-3 sm:w-36 lg:w-52">
+                      <span className="font-sans text-[11px] font-medium tracking-[0.2em] text-gold">
+                        {number}
                       </span>
+                      <MemberPortrait member={member} />
                     </div>
-                  )}
-                  <h2 className="mt-5 font-display text-[1.65rem] font-bold leading-tight text-navy sm:text-[1.85rem]">
-                    {member.name}
-                  </h2>
-                  <p className="mt-2 font-sans text-[10px] font-medium uppercase tracking-[0.14em] text-gold sm:text-[11px] sm:tracking-[0.18em]">
-                    {member.role}
-                  </p>
-                  <p className="mt-3 font-serif text-[14px] leading-6 text-[#8E8E8E]">
-                    {member.focus}
-                  </p>
 
-                  <div className="mt-6 border-t border-[#E8E4DC] pt-5">
-                    <p className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#B0AAA0]">
-                      Qualifications
-                    </p>
-                    <ul className="mt-3 space-y-1.5">
-                      {member.qualifications.map((item) => (
-                        <li
-                          key={item}
-                          className="flex gap-2.5 font-sans text-[13px] leading-6 text-[#8E8E8E]"
-                        >
-                          <span
-                            aria-hidden
-                            className="mt-[0.55em] h-1 w-1 shrink-0 rounded-full bg-gold"
-                          />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="min-w-0 flex-1 pt-6 sm:pt-7 lg:pt-0">
+                      <h3 className="font-display text-[1.45rem] font-bold leading-tight text-navy sm:text-[1.95rem] lg:text-[2.15rem]">
+                        {member.name}
+                      </h3>
+                      <p className="mt-2 font-sans text-[10px] font-medium uppercase tracking-[0.16em] text-gold sm:text-[11px] sm:tracking-[0.2em]">
+                        {member.role}
+                      </p>
+                      <p className="mt-3 font-serif text-[13px] leading-6 text-[#8E8E8E] sm:text-[15px]">
+                        {member.focus}
+                      </p>
+
+                      <p className="mt-5 font-sans text-[15px] font-normal leading-7 text-navy/80 sm:mt-6 sm:text-base sm:leading-8">
+                        {member.bio}
+                      </p>
+
+                      <div className="mt-8 grid gap-8 border-t border-[#E8E4DC] pt-6 sm:grid-cols-2 sm:gap-10">
+                        <div>
+                          <p className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#B0AAA0]">
+                            Qualifications
+                          </p>
+                          <ul className="mt-3 space-y-2">
+                            {member.qualifications.map((item) => (
+                              <li
+                                key={item}
+                                className="flex gap-2.5 font-sans text-[13px] leading-6 text-navy/75"
+                              >
+                                <span
+                                  aria-hidden
+                                  className="mt-[0.55em] h-1 w-1 shrink-0 rounded-full bg-gold"
+                                />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {"specialFields" in member && member.specialFields ? (
+                          <div>
+                            <p className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#B0AAA0]">
+                              Special Field
+                            </p>
+                            <ul className="mt-3 flex flex-wrap gap-2">
+                              {member.specialFields.map((item) => (
+                                <li
+                                  key={item}
+                                  className="border border-[#E8E4DC] px-3 py-1.5 font-sans text-[12px] leading-5 text-navy/80"
+                                >
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ) : null}
+                      </div>
+                    </div>
                   </div>
-                </div>
-
-                <div className="flex md:border-l md:border-[#E8E4DC] md:items-center md:pl-8 lg:pl-12 xl:pl-16">
-                  <p className="w-full font-serif text-[16px] italic leading-[1.9] text-navy sm:text-[18px] sm:leading-[2.15] lg:text-[19px] lg:leading-[2.25]">
-                    {member.bio}
-                  </p>
-                </div>
-              </article>
-            ))}
+                </article>
+              )
+            })}
           </div>
         </div>
       </section>
 
       <section className="border-t border-gold bg-navy">
-        <div className="mx-auto grid max-w-[1400px] items-center gap-10 px-5 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1fr_1fr] lg:gap-16 lg:px-8 lg:py-24 xl:px-12">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-14 sm:px-6 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:py-20">
           <div>
             <span aria-hidden className="block h-px w-10 bg-gold" />
             <h2 className="mt-5 font-display text-[1.85rem] font-bold leading-[1.15] text-white sm:text-4xl lg:text-[2.75rem]">
               Dedicated to Your
               <span className="mt-1 block italic text-gold">Success</span>
             </h2>
-          </div>
-
-          <div>
-            <p className="max-w-xl font-sans text-[15px] font-normal leading-8 text-white/80 sm:text-base sm:leading-8">
+            <p className="mt-5 max-w-xl font-sans text-[15px] font-normal leading-7 text-white/75 sm:leading-8">
               Every member of the GACS team brings deep domain expertise, a
               client-first mindset and an unwavering commitment to professional
-              excellence. We combine our respective strengths to serve you
-              comprehensively, without gaps.
+              excellence.
             </p>
+          </div>
+
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <Link
               href="/contact"
-              className="mt-8 inline-flex w-full items-center justify-center bg-gold px-6 py-3.5 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-navy transition-colors hover:bg-gold/85 sm:w-auto"
+              className="inline-flex items-center justify-center bg-gold px-6 py-3.5 font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-navy transition-colors hover:bg-gold/85"
             >
               Speak With Our Team
+            </Link>
+            <Link
+              href="/book"
+              className="inline-flex items-center justify-center border border-white/40 px-6 py-3.5 font-sans text-[11px] font-medium uppercase tracking-[0.16em] text-white transition-colors hover:border-gold hover:bg-gold hover:text-navy"
+            >
+              Book Consultation
             </Link>
           </div>
         </div>

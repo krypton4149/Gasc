@@ -139,7 +139,7 @@ export default function HomePage() {
               Why GACS
             </p>
             <h2 className="mt-5 font-serif text-4xl leading-[1.12] text-white sm:text-5xl">
-              One Firm.
+              One Roof.
               <span className="mt-1 block italic text-gold">All Answers.</span>
             </h2>
             <p className="mt-6 max-w-md font-sans text-[15px] font-normal leading-7 text-warm">

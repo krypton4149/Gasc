@@ -89,45 +89,63 @@ export default function WhyPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-navy">
-        <div className="mx-auto max-w-[1680px] px-4 py-14 sm:px-5 sm:py-16 lg:px-6 lg:py-20 xl:px-8">
+      <section className="bg-navy">
+        <div className="mx-auto max-w-[1400px] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:px-12">
           <span aria-hidden className="block h-px w-10 bg-gold" />
           <p className="mt-4 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-gold">
             Client Voices
           </p>
-          <h2 className="mt-4 font-display text-[1.75rem] font-bold text-white sm:text-4xl lg:text-[2.65rem]">
+          <h2 className="mt-4 max-w-xl font-display text-[1.75rem] font-bold text-white sm:text-4xl lg:text-[2.65rem]">
             What Our Clients Say
           </h2>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-3 xl:grid-cols-5 xl:gap-0">
-            {testimonials.map((item, index) => (
-              <article
-                key={item.name}
-                className={`flex flex-col bg-primary-700 p-6 sm:p-7 lg:p-8 ${
-                  index < testimonials.length - 1
-                    ? "xl:border-r xl:border-white/10"
-                    : ""
-                }`}
-              >
-                <span
-                  aria-hidden
-                  className="font-display text-4xl leading-none text-gold"
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-6 lg:gap-6">
+            {testimonials.map((item) => {
+              const mark = item.name
+                .split(/\s+/)
+                .map((word) => word[0])
+                .join("")
+                .slice(0, 2)
+
+              return (
+                <article
+                  key={item.name}
+                  className="group flex flex-col border border-white/10 bg-primary-700 p-6 transition-colors duration-200 hover:border-gold sm:p-7 lg:col-span-2 lg:[&:nth-child(4)]:col-start-2"
                 >
-                  “
-                </span>
-                <p className="mt-4 flex-1 font-serif text-[15px] italic leading-7 text-white">
-                  {item.quote}
-                </p>
-                <div className="mt-8 border-t border-white/15 pt-5">
-                  <p className="font-sans text-sm font-semibold text-white">
-                    {item.name}
+                  <span aria-hidden className="block h-px w-8 bg-gold" />
+
+                  <div className="mt-6 flex h-20 items-center">
+                    {"logo" in item && item.logo ? (
+                      <Image
+                        src={item.logo}
+                        alt={`${item.name} logo`}
+                        width={220}
+                        height={80}
+                        unoptimized
+                        className="h-16 w-auto max-w-[15rem] object-contain object-left"
+                      />
+                    ) : (
+                      <span className="font-display text-xl italic leading-none text-gold">
+                        {mark}
+                      </span>
+                    )}
+                  </div>
+
+                  <p className="mt-6 flex-1 font-serif text-[15px] leading-7 text-white">
+                    “{item.quote}”
                   </p>
-                  <p className="mt-1 font-mono text-[11px] tracking-wide text-gold">
-                    {item.role}
-                  </p>
-                </div>
-              </article>
-            ))}
+
+                  <div className="mt-8 border-t border-white/15 pt-5">
+                    <p className="font-sans text-sm font-semibold text-white">
+                      {item.name}
+                    </p>
+                    <p className="mt-1 font-sans text-[11px] tracking-[0.04em] text-gold">
+                      {item.role}
+                    </p>
+                  </div>
+                </article>
+              )
+            })}
           </div>
         </div>
       </section>
