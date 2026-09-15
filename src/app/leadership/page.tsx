@@ -15,26 +15,16 @@ function MemberPortrait({
 }: {
   member: (typeof leadershipTeam)[number]
 }) {
-  if ("photo" in member && member.photo) {
-    return (
-      <div className="relative size-20 overflow-hidden rounded-full ring-1 ring-gold/80 sm:size-36 lg:size-52">
-        <Image
-          src={member.photo}
-          alt={member.name}
-          fill
-          unoptimized
-          sizes="208px"
-          className="scale-[1.18] object-cover object-[center_30%]"
-        />
-      </div>
-    )
-  }
-
   return (
-    <div className="grid size-20 place-items-center rounded-full bg-navy ring-1 ring-gold/80 sm:size-36 lg:size-52">
-      <span className="font-display text-xl italic leading-none text-gold sm:text-3xl lg:text-4xl">
-        {member.initials}
-      </span>
+    <div className="relative size-20 overflow-hidden rounded-full ring-1 ring-gold/80 sm:size-36 lg:size-52">
+      <Image
+        src={member.photo}
+        alt={member.name}
+        fill
+        unoptimized
+        sizes="208px"
+        className="scale-[1.18] object-cover object-[center_30%]"
+      />
     </div>
   )
 }
