@@ -21,6 +21,7 @@ const practiceLinks = [
 ] as const
 
 const phoneHref = `https://wa.me/${siteConfig.phone.replace(/\D/g, "")}`
+const phoneSecondaryHref = `https://wa.me/${siteConfig.phoneSecondary.replace(/\D/g, "")}`
 
 function WhatsAppIcon() {
   return (
@@ -130,6 +131,17 @@ export function Footer() {
                   <WhatsAppIcon />
                 </span>
                 {siteConfig.phone}
+              </a>
+            </li>
+            <li>
+              <a
+                href={phoneSecondaryHref}
+                className="inline-flex items-center gap-3 font-sans text-sm text-warm/85 transition-all hover:font-semibold hover:text-gold"
+              >
+                <span className="text-gold">
+                  <WhatsAppIcon />
+                </span>
+                {siteConfig.phoneSecondary}
               </a>
             </li>
             <li>

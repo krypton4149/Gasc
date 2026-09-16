@@ -10,6 +10,7 @@ export const siteConfig = {
   url: "https://gasc.local",
   locale: "en_IN",
   phone: "+91 78956 33129",
+  phoneSecondary: "+91 97197 98042",
   email: "info@gacs.co.in",
   address:
     "Baldevi Tower, NH 2, Chaturi Nagar, Suhag Nagar, Firozabad, Uttar Pradesh 283203",
