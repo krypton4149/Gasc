@@ -101,22 +101,34 @@ export default function WhyPage() {
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-6 lg:gap-6">
             {testimonials.map((item) => {
+              const mark = item.name
+                .split(/\s+/)
+                .map((word) => word[0])
+                .join("")
+                .slice(0, 2)
+
               return (
                 <article
                   key={item.name}
-                  className="group flex flex-col border border-white/10 bg-primary-700 p-6 transition-colors duration-200 hover:border-gold sm:p-7 lg:col-span-2 lg:[&:nth-child(4)]:col-start-2"
+                  className="group flex flex-col border border-white/10 bg-primary-700 p-6 transition-colors duration-200 hover:border-gold sm:p-7 lg:col-span-2"
                 >
                   <span aria-hidden className="block h-px w-8 bg-gold" />
 
                   <div className="mt-6 flex h-20 items-center">
-                    <Image
-                      src={item.logo}
-                      alt={`${item.name} logo`}
-                      width={220}
-                      height={80}
-                      unoptimized
-                      className="h-16 w-auto max-w-[15rem] object-contain object-left"
-                    />
+                    {"logo" in item && item.logo ? (
+                      <Image
+                        src={item.logo}
+                        alt={`${item.name} logo`}
+                        width={220}
+                        height={80}
+                        unoptimized
+                        className="h-16 w-auto max-w-[15rem] object-contain object-left"
+                      />
+                    ) : (
+                      <span className="font-display text-xl italic leading-none text-gold">
+                        {mark}
+                      </span>
+                    )}
                   </div>
 
                   <p className="mt-6 flex-1 font-serif text-[15px] leading-7 text-white">

@@ -154,6 +154,13 @@ export const testimonials = [
     role: "Mr. Manoj Bansal",
     logo: "/images/shri.png",
   },
+  {
+    quote:
+      "GACS is the legal partner for Lockhouse. From production contracts to on-set compliance and talent documentation, their counsel keeps the show protected, discreet and moving on schedule.",
+    name: "Lockhouse",
+    role: "Legal Partner — Reality Show",
+    logo: "/images/lock.png",
+  },
 ] as const
 
 export const aboutPrinciples = [
