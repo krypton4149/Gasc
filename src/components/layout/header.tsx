@@ -15,6 +15,7 @@ import {
 } from "lucide-react"
 import { useEffect, useState } from "react"
 
+import { SocialLinks } from "@/components/layout/social-links"
 import { navItems, siteConfig } from "@/lib/site"
 import { cn } from "@/lib/utils"
 
@@ -29,7 +30,7 @@ const drawerIcons = {
 
 function Logo({ inverted = false }: { inverted?: boolean }) {
   return (
-    <Link href="/" className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+    <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3">
       <Image
         src={siteConfig.logo}
         alt={`${siteConfig.brandName} logo`}
@@ -41,7 +42,7 @@ function Logo({ inverted = false }: { inverted?: boolean }) {
       />
       <span
         className={cn(
-          "flex min-w-0 flex-col items-start text-left",
+          "flex min-w-0 flex-col items-start justify-center text-left",
           inverted ? "text-navy" : "text-white",
         )}
       >
@@ -67,15 +68,21 @@ function Logo({ inverted = false }: { inverted?: boolean }) {
           <span className="whitespace-nowrap">{siteConfig.brandService}</span>
           <span aria-hidden className="h-px w-3.5 shrink-0 bg-gold sm:w-5" />
         </span>
-        {inverted ? (
-          <span className="mt-1.5 text-[7px] font-light uppercase tracking-[0.16em] text-navy/60">
-            {siteConfig.brandSlogan}
-          </span>
-        ) : (
-          <span className="mt-1.5 hidden text-[6.5px] font-light uppercase tracking-[0.24em] text-white/80 sm:block">
-            {siteConfig.brandSlogan}
-          </span>
-        )}
+        <span className="mt-1.5 flex flex-col gap-1">
+          {siteConfig.brandRoleLines.map((line) => (
+            <span
+              key={line}
+              className={cn(
+                "whitespace-nowrap font-extrabold uppercase leading-none tracking-[0.08em] text-gold [text-shadow:0.35px_0_0_currentColor]",
+                inverted
+                  ? "text-[8px]"
+                  : "text-[8px] sm:text-[9.5px] sm:tracking-[0.1em]",
+              )}
+            >
+              {line}
+            </span>
+          ))}
+        </span>
       </span>
     </Link>
   )
@@ -85,7 +92,7 @@ function NavLinks() {
   const pathname = usePathname()
 
   return (
-    <nav className="hidden items-center justify-center lg:flex">
+    <nav className="hidden w-full items-center justify-center lg:flex">
       {navItems.map((item) => {
         const active =
           item.href === "/" ? pathname === "/" : pathname.startsWith(item.href)
@@ -102,7 +109,7 @@ function NavLinks() {
           >
             {item.label}
             {active ? (
-              <span className="absolute inset-x-3 -bottom-0.5 h-px bg-gold" />
+              <span className="absolute inset-x-3 bottom-1 h-px bg-gold" />
             ) : null}
           </Link>
         )
@@ -129,7 +136,7 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-40 border-y border-gold/80 bg-navy">
-        <div className="mx-auto grid h-[76px] max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 sm:h-[88px] sm:gap-4 sm:px-6 lg:grid-cols-[1fr_auto_1fr] lg:px-8">
+        <div className="mx-auto grid min-h-[88px] max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-3 py-2.5 sm:gap-4 sm:px-6 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:px-8">
           <Logo />
 
           <NavLinks />
@@ -227,6 +234,7 @@ export function Header() {
           </nav>
 
           <div className="px-5 pb-8">
+            <SocialLinks variant="light" className="mb-5" />
             <Link
               href="/book"
               onClick={() => setOpen(false)}

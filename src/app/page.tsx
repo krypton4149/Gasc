@@ -32,7 +32,8 @@ export default function HomePage() {
           </h1>
           <p className="mt-6 max-w-lg text-base leading-7 text-white/70 sm:text-lg">
             A multidisciplinary consultancy serving individuals and businesses
-            across law, taxation, finance and corporate advisory.
+            across law, taxation, finance and corporate advisory — backed by a
+            team of 20+ Chartered Accountants and Company Secretaries.
           </p>
           <div className="mt-8 flex w-full flex-col gap-4 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
             <Link
@@ -78,7 +79,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-5 max-w-sm text-[15px] leading-7 text-neutral-500">
               Expert counsel across legal, tax, business and financial matters —
-              unified under one firm.
+              with in-service, server and other support in every practice.
             </p>
             <Link
               href="/services"

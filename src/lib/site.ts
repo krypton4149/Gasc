@@ -4,6 +4,12 @@ export const siteConfig = {
   brandName: "Gupta Associate",
   brandService: "Consultancy Service",
   brandSlogan: "Your Partner For A Brighter Tomorrow",
+  brandRoles:
+    "Tax Consultant  ||  Legal Advisor  ||  Corporate Consultant  ||  Finance Professional",
+  brandRoleLines: [
+    "Tax Consultant  ||  Legal Advisor",
+    "Corporate Consultant  ||  Finance Professional",
+  ],
   tagline: "Trusted gas & energy services for homes and businesses.",
   description:
     "Book LPG delivery, PNG connections, appliance installation, and safety inspections across Shikohabad. Fast, certified, and dependable.",
@@ -11,13 +17,27 @@ export const siteConfig = {
   locale: "en_IN",
   phone: "+91 78956 33129",
   phoneSecondary: "+91 97197 98042",
-  email: "info@gacs.co.in",
+  email: "info@gacs.org.in",
   address:
-    "Baldevi Tower, NH 2, Chaturi Nagar, Suhag Nagar, Firozabad, Uttar Pradesh 283203",
+    "A19-22, Ground Floor, Baldevi Tower, Suhag Nagar, Firozabad - 283203, U.P - India",
   hours: "Mon–Sat: 9:30AM – 7:30PM",
   hoursDays: "Monday – Saturday",
   hoursTime: "9:30AM – 7:30PM",
   hoursSunday: "Sunday: Closed",
+  socials: [
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/gacs0001/",
+    },
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/1Gacs#",
+    },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/pratham-gupta-3a72b0231",
+    },
+  ],
   footerBlurb:
     "Professional advisory that protects, guides & grows your business.",
   logo: "/images/logo.png",
@@ -39,25 +59,49 @@ export const practiceAreas = [
     slug: "legal",
     number: "01",
     title: "Legal Advisory & Representation",
-    topics: ["Civil matters", "Corporate law", "Litigation", "Dispute resolution"],
+    topics: [
+      "Civil matters",
+      "Corporate law",
+      "In-service",
+      "Server support",
+      "Other services",
+    ],
   },
   {
     slug: "taxation",
     number: "02",
     title: "Taxation & Regulatory",
-    topics: ["Income tax", "GST advisory", "Tax litigation", "Compliance"],
+    topics: [
+      "Income tax",
+      "GST advisory",
+      "In-service",
+      "Server support",
+      "Other services",
+    ],
   },
   {
     slug: "business",
     number: "03",
     title: "Business & Corporate",
-    topics: ["Structuring", "Documentation", "Company law", "Compliance"],
+    topics: [
+      "Structuring",
+      "Documentation",
+      "In-service",
+      "Server support",
+      "Other services",
+    ],
   },
   {
     slug: "finance",
     number: "04",
     title: "Finance & Accounting",
-    topics: ["Planning", "Bookkeeping", "Analysis", "Financial advisory"],
+    topics: [
+      "Planning",
+      "Bookkeeping",
+      "In-service",
+      "Server support",
+      "Other services",
+    ],
   },
 ] as const
 
@@ -95,27 +139,27 @@ export const aboutStory = {
     "A practice built on long-term client relationships, not transactions.",
   columns: [
     "Gupta Associate Consultancy Service was formed as a proprietorship in 2017 by Anmol Gupta. The practice began with accounting and taxation, and has grown into an integrated advisory firm — serving individuals and businesses under one roof, with advice that works in the real world.",
-    "The firm later added two senior professionals, CA Nitin Gupta and Adv. Deepak Kumar Jain. It is supported by four semi-qualified members — Pratham Gupta, Ashish Gupta, Kshitiz Jain and Piyush Gupta — each contributing to the GACS standard of care.",
+    "The firm later added two senior professionals, CA Nitin Gupta and Adv. Deepak Kumar Jain. It is supported by a total team of 20+ Chartered Accountants and Company Secretaries — including four semi-qualified members, Pratham Gupta, Ashish Gupta, Kshitiz Jain and Piyush Gupta — each contributing to the GACS standard of care.",
   ],
   stats: [
     { value: "9+", label: "Years of Practice" },
-    { value: "2000+", label: "Clients Served" },
+    { value: "2500+", label: "Clients Served" },
+    { value: "20+", label: "CA & CS Team" },
     { value: "100%", label: "Satisfaction Rate" },
-    { value: "4", label: "Integrated Practice Areas" },
   ],
 } as const
 
 export const heroStats = [
   { value: "9+", label: "Years Practice" },
-  { value: "2000+", label: "Clients Served" },
-  { value: "4", label: "Practice Areas" },
+  { value: "2500+", label: "Clients Served" },
+  { value: "20+", label: "CA & CS Team" },
   { value: "100%", label: "Satisfaction Rate" },
 ] as const
 
 export const whyStats = [
   { value: "9+", label: "Years of Practice" },
-  { value: "2000+", label: "Clients Served" },
-  { value: "4", label: "Practice Areas" },
+  { value: "2500+", label: "Clients Served" },
+  { value: "20+", label: "CA & CS Team" },
   { value: "100%", label: "Client Retention" },
 ] as const
 
@@ -145,7 +189,7 @@ export const testimonials = [
     quote:
       "Their finance, accounting and commercial advisory gave our showroom the clarity we needed. Decisions are faster, the books are sound, and we know where we stand.",
     name: "Honda Showroom",
-    role: "Automobile Dealership",
+    role: "Mr. Naveen Mittal & Mr. Kumal Mittal",
     logo: "/images/honda.png",
   },
   {
@@ -247,6 +291,16 @@ export const leadershipTeam = [
     ],
     bio: "Deepak Kumar Jain is Associate Partner at GACS, bringing more than two decades of courtroom and advisory experience to the firm. Qualified in commerce and law (B.Com, LL.B.), he practises across civil, criminal and family matters, with a primary focus on litigation. In practice since 2002, he has guided individuals and families through disputes, proceedings and sensitive personal matters with clarity and discretion. At GACS he works alongside the firm’s tax, finance and corporate teams so clients receive legal representation that is coordinated, practical and firmly grounded in their wider interests.",
   },
+  {
+    initials: "PYG",
+    name: "Piyush Gupta",
+    role: "Associate",
+    focus: "Commerce — Law",
+    photo: "/images/aman.png",
+    photoClass: "scale-[1.32] object-center",
+    qualifications: ["B.Com", "LL.B."],
+    bio: "Piyush Gupta is Associate at GACS, qualified in commerce and law (B.Com, LL.B.). He works alongside the firm’s founders and counsel so clients receive coordinated, practical support across the practice.",
+  },
 ] as const
 
 export const whyAdvantages = [
@@ -288,7 +342,7 @@ export const practiceCatalogue = [
     number: "01",
     tab: "Law",
     title: "Legal Advisory & Representation",
-    copy: "Expert legal counsel across civil, commercial and corporate matters — from advisory through to representation.",
+    copy: "Expert legal counsel across civil, commercial and corporate matters — from advisory through to representation. In-service, server and other legal support included.",
     offerings: [
       {
         number: "01",
@@ -320,6 +374,21 @@ export const practiceCatalogue = [
         title: "Recovery & Cheque Bounce Matters",
         copy: "Recovery proceedings and representation in dishonoured cheque cases under the Negotiable Instruments Act.",
       },
+      {
+        number: "07",
+        title: "In-Service Legal Support",
+        copy: "On-site and in-office legal support — we attend at your premises or at GACS, as the matter requires.",
+      },
+      {
+        number: "08",
+        title: "Server & Online Legal Support",
+        copy: "Remote consultation, digital document exchange and virtual follow-up through secure online channels.",
+      },
+      {
+        number: "09",
+        title: "Other Legal Services",
+        copy: "Allied legal work connected to your matter, coordinated under the same GACS engagement.",
+      },
     ],
   },
   {
@@ -327,7 +396,7 @@ export const practiceCatalogue = [
     number: "02",
     tab: "Tax",
     title: "Taxation & Regulatory Consultancy",
-    copy: "Complete tax advisory and compliance services across direct and indirect tax laws.",
+    copy: "Complete tax advisory and compliance services across direct and indirect tax laws. In-service, server and other tax support included.",
     offerings: [
       {
         number: "01",
@@ -359,6 +428,21 @@ export const practiceCatalogue = [
         title: "TDS & Regulatory Compliance",
         copy: "TDS computation, deposition, returns filing and ongoing regulatory compliance management.",
       },
+      {
+        number: "07",
+        title: "In-Service Tax Support",
+        copy: "On-site and in-office tax support — returns, notices and compliance handled at your premises or at GACS.",
+      },
+      {
+        number: "08",
+        title: "Server & Online Tax Support",
+        copy: "Remote filing, digital records and virtual tax advisory through secure online channels.",
+      },
+      {
+        number: "09",
+        title: "Other Tax Services",
+        copy: "Allied taxation and regulatory work connected to your filings, coordinated under the same engagement.",
+      },
     ],
   },
   {
@@ -366,7 +450,7 @@ export const practiceCatalogue = [
     number: "03",
     tab: "Business",
     title: "Business & Corporate Consultancy",
-    copy: "From incorporation to ongoing compliance — comprehensive corporate advisory for businesses at every stage.",
+    copy: "From incorporation to ongoing compliance — comprehensive corporate advisory for businesses at every stage. In-service, server and other business support included.",
     offerings: [
       {
         number: "01",
@@ -398,6 +482,21 @@ export const practiceCatalogue = [
         title: "Business Compliance Management",
         copy: "Ongoing management of legal and regulatory compliance obligations to keep your business sound.",
       },
+      {
+        number: "07",
+        title: "In-Service Business Support",
+        copy: "On-site and in-office corporate support — documentation and compliance handled at your premises or at GACS.",
+      },
+      {
+        number: "08",
+        title: "Server & Online Business Support",
+        copy: "Remote incorporation filings, digital documentation and virtual corporate advisory through secure online channels.",
+      },
+      {
+        number: "09",
+        title: "Other Business Services",
+        copy: "Allied corporate and commercial work connected to your business, coordinated under the same engagement.",
+      },
     ],
   },
   {
@@ -405,7 +504,7 @@ export const practiceCatalogue = [
     number: "04",
     tab: "Finance",
     title: "Finance & Accounting Support",
-    copy: "Sound financial management and advisory services to support informed decision-making and growth.",
+    copy: "Sound financial management and advisory services to support informed decision-making and growth. In-service, server and other finance support included.",
     offerings: [
       {
         number: "01",
@@ -436,6 +535,21 @@ export const practiceCatalogue = [
         number: "06",
         title: "Commercial & Financial Consultancy",
         copy: "Strategic commercial and financial guidance to support sound business decisions.",
+      },
+      {
+        number: "07",
+        title: "In-Service Finance Support",
+        copy: "On-site and in-office accounting support — books, reports and advisory handled at your premises or at GACS.",
+      },
+      {
+        number: "08",
+        title: "Server & Online Finance Support",
+        copy: "Remote bookkeeping, digital financial records and virtual advisory through secure online channels.",
+      },
+      {
+        number: "09",
+        title: "Other Finance Services",
+        copy: "Allied accounting and financial work connected to your books, coordinated under the same engagement.",
       },
     ],
   },

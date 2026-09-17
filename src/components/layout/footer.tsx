@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Clock, Mail } from "lucide-react"
 
+import { SocialLinks } from "@/components/layout/social-links"
 import { practiceAreas, siteConfig } from "@/lib/site"
 
 const quickLinks = [
@@ -64,37 +65,45 @@ export function Footer() {
         className="h-px w-full bg-[linear-gradient(to_right,transparent_0%,#c79a32_50%,transparent_100%)]"
       />
       <div className="grid gap-10 py-12 pl-4 pr-4 sm:gap-12 sm:py-16 sm:pl-5 sm:pr-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 lg:pl-8 xl:pl-10">
-        <div>
-          <Link href="/" className="flex items-start gap-3">
+        <div className="min-w-0 max-w-xs">
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src={siteConfig.logo}
               alt={`${siteConfig.brandName} logo`}
               width={siteConfig.logoWidth}
               height={siteConfig.logoHeight}
-              className="mt-0.5 size-11 object-contain"
+              className="size-11 shrink-0 object-contain"
               unoptimized
             />
-            <span className="flex flex-col items-start text-left">
+            <span className="flex min-w-0 flex-col items-start justify-center text-left">
               <span className="font-sans text-[15px] font-bold uppercase leading-none tracking-[0.08em] text-white">
                 {siteConfig.brandName}
               </span>
-              <span className="mt-1.5 flex items-center gap-2 font-sans text-[8px] font-medium uppercase tracking-[0.18em] text-white">
+              <span className="mt-1.5 flex items-center gap-2 font-sans text-[8px] font-medium uppercase leading-none tracking-[0.18em] text-white">
                 <span aria-hidden className="h-px w-4 bg-gold" />
                 {siteConfig.brandService}
                 <span aria-hidden className="h-px w-4 bg-gold" />
               </span>
-              <span className="mt-1.5 font-sans text-[6.5px] font-light uppercase tracking-[0.22em] text-warm">
-                {siteConfig.brandSlogan}
+              <span className="mt-1.5 flex w-full flex-col gap-1">
+                {siteConfig.brandRoleLines.map((line) => (
+                  <span
+                    key={line}
+                    className="font-sans text-[8px] font-extrabold uppercase leading-snug tracking-[0.06em] text-gold [text-shadow:0.35px_0_0_currentColor]"
+                  >
+                    {line}
+                  </span>
+                ))}
               </span>
             </span>
           </Link>
-          <div className="mt-4 h-px w-full max-w-xs bg-gold" />
+          <div className="mt-4 h-px w-full bg-gold" />
           <p className="mt-5 max-w-xs font-sans text-sm leading-6 text-warm/80">
             {siteConfig.footerBlurb}
           </p>
           <p className="mt-4 max-w-xs font-serif text-sm italic text-gold">
             Your Concern. Our Expertise. Your Confidence.
           </p>
+          <SocialLinks className="mt-5" />
         </div>
 
         <div>

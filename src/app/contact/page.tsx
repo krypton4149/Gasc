@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { ContactForm } from "@/components/contact/contact-form"
+import { SocialLinks } from "@/components/layout/social-links"
 import { siteConfig } from "@/lib/site"
 
 const whatsappHref = `https://wa.me/${siteConfig.phone.replace(/\D/g, "")}`
@@ -95,6 +96,13 @@ export default function ContactPage() {
               <p className="mt-2 font-sans text-[14px] text-[#8E8E8E]">
                 {siteConfig.hoursSunday}
               </p>
+            </div>
+
+            <div className="border-t border-[#E8E4DC] py-8">
+              <p className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#B0AAA0]">
+                Follow Us
+              </p>
+              <SocialLinks variant="light" className="mt-5" />
             </div>
 
             <div className="bg-navy p-6 sm:p-7">

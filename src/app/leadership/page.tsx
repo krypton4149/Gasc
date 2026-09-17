@@ -23,7 +23,12 @@ function MemberPortrait({
         fill
         unoptimized
         sizes="208px"
-        className="scale-[1.18] object-cover object-[center_30%]"
+        className={cn(
+          "object-cover",
+          "photoClass" in member && member.photoClass
+            ? member.photoClass
+            : "scale-[1.18] object-[center_30%]",
+        )}
       />
     </div>
   )
@@ -58,7 +63,8 @@ export default function LeadershipPage() {
 
           <p className="max-w-md pb-1 font-sans text-[15px] font-normal leading-7 text-white sm:text-base lg:justify-self-start">
             Decades of combined expertise across law, taxation and corporate
-            practice — each professional bringing depth, each working in
+            practice — a total team of 20+ Chartered Accountants and Company
+            Secretaries, each professional bringing depth, each working in
             concert.
           </p>
         </div>
@@ -87,7 +93,7 @@ export default function LeadershipPage() {
 
               return (
                 <article
-                  key={member.initials}
+                  key={member.name}
                   className="bg-white px-5 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12"
                 >
                   <div
@@ -175,9 +181,9 @@ export default function LeadershipPage() {
               <span className="mt-1 block italic text-gold">Success</span>
             </h2>
             <p className="mt-5 max-w-xl font-sans text-[15px] font-normal leading-7 text-white/75 sm:leading-8">
-              Every member of the GACS team brings deep domain expertise, a
-              client-first mindset and an unwavering commitment to professional
-              excellence.
+              Every member of the GACS team — 20+ Chartered Accountants and
+              Company Secretaries — brings deep domain expertise, a client-first
+              mindset and an unwavering commitment to professional excellence.
             </p>
           </div>
 

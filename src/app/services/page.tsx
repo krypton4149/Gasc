@@ -38,8 +38,8 @@ export default function ServicesPage() {
 
           <p className="max-w-md pb-1 font-sans text-[15px] font-normal leading-7 text-white sm:text-base lg:justify-self-start">
             Expert advisory across law, taxation, business and finance — each
-            practice deep, each connected to the others, all available through a
-            single firm.
+            practice deep, each connected to the others. In-service, server and
+            other related support is available in every service.
           </p>
         </div>
       </section>
