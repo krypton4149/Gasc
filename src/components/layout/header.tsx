@@ -28,15 +28,30 @@ const drawerIcons = {
   "/contact": Mail,
 } as const
 
-function Logo({ inverted = false }: { inverted?: boolean }) {
+function Logo({
+  inverted = false,
+  compact = false,
+}: {
+  inverted?: boolean
+  compact?: boolean
+}) {
   return (
-    <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3">
+    <Link
+      href="/"
+      className={cn(
+        "flex min-w-0 items-center gap-2.5 sm:gap-3",
+        compact ? "flex-1" : "shrink-0",
+      )}
+    >
       <Image
         src={siteConfig.logo}
         alt={`${siteConfig.brandName} logo`}
         width={siteConfig.logoWidth}
         height={siteConfig.logoHeight}
-        className="size-12 shrink-0 object-contain sm:size-[58px]"
+        className={cn(
+          "shrink-0 object-contain",
+          compact ? "size-11" : "size-12 sm:size-[58px]",
+        )}
         preload
         unoptimized
       />
@@ -48,10 +63,10 @@ function Logo({ inverted = false }: { inverted?: boolean }) {
       >
         <span
           className={cn(
-            "whitespace-nowrap font-bold uppercase leading-none",
-            inverted
-              ? "text-[13px] tracking-[0.08em]"
-              : "text-[14px] tracking-[0.08em] sm:text-[17px] sm:tracking-[0.1em]",
+            "font-bold uppercase leading-none",
+            compact
+              ? "text-[12px] tracking-[0.06em] sm:text-[13px] sm:tracking-[0.08em]"
+              : "whitespace-nowrap text-[14px] tracking-[0.08em] sm:text-[17px] sm:tracking-[0.1em]",
           )}
         >
           {siteConfig.brandName}
@@ -59,24 +74,24 @@ function Logo({ inverted = false }: { inverted?: boolean }) {
         <span
           className={cn(
             "mt-1.5 flex items-center gap-1.5 font-medium uppercase leading-none",
-            inverted
-              ? "text-[8px] tracking-[0.16em]"
+            compact
+              ? "text-[7.5px] tracking-[0.12em]"
               : "text-[8.5px] tracking-[0.14em] sm:gap-2 sm:text-[9px] sm:tracking-[0.2em]",
           )}
         >
           <span aria-hidden className="h-px w-3.5 shrink-0 bg-gold sm:w-5" />
-          <span className="whitespace-nowrap">{siteConfig.brandService}</span>
+          <span className="min-w-0">{siteConfig.brandService}</span>
           <span aria-hidden className="h-px w-3.5 shrink-0 bg-gold sm:w-5" />
         </span>
-        <span className="mt-1.5 flex flex-col gap-1">
+        <span className="mt-1.5 flex w-full min-w-0 flex-col gap-1">
           {siteConfig.brandRoleLines.map((line) => (
             <span
               key={line}
               className={cn(
-                "whitespace-nowrap font-extrabold uppercase leading-none tracking-[0.08em] text-gold [text-shadow:0.35px_0_0_currentColor]",
-                inverted
-                  ? "text-[8px]"
-                  : "text-[8px] sm:text-[9.5px] sm:tracking-[0.1em]",
+                "font-extrabold uppercase leading-snug tracking-[0.06em] text-gold [text-shadow:0.35px_0_0_currentColor]",
+                compact
+                  ? "text-[7px] sm:text-[8px]"
+                  : "whitespace-nowrap text-[8px] sm:text-[9.5px] sm:tracking-[0.1em]",
               )}
             >
               {line}
@@ -180,24 +195,25 @@ export function Header() {
 
         <aside
           className={cn(
-            "absolute inset-y-0 left-0 flex w-[min(22.5rem,88vw)] flex-col overflow-visible bg-white pb-[env(safe-area-inset-bottom)] shadow-2xl transition-transform duration-300 ease-out",
-            "rounded-br-[2.75rem]",
+            "absolute inset-y-0 left-0 flex w-full flex-col overflow-hidden bg-navy pb-[env(safe-area-inset-bottom)] shadow-2xl transition-transform duration-300 ease-out",
             open ? "translate-x-0" : "-translate-x-full",
           )}
         >
-          <div className="flex items-center gap-3 px-4 pb-6 pt-[max(1rem,env(safe-area-inset-top))] sm:px-5">
-            <button
-              type="button"
-              aria-label="Close menu"
-              onClick={() => setOpen(false)}
-              className="grid size-11 shrink-0 place-items-center rounded-full bg-[#F1EEE8] text-navy"
-            >
-              <ChevronLeft className="size-5" />
-            </button>
-            <Logo inverted />
+          <div className="border-b border-gold/40 px-4 pb-5 pt-[max(1rem,env(safe-area-inset-top))] sm:px-5">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <button
+                type="button"
+                aria-label="Close menu"
+                onClick={() => setOpen(false)}
+                className="grid size-11 shrink-0 place-items-center rounded-full border border-gold/45 text-gold"
+              >
+                <ChevronLeft className="size-5" />
+              </button>
+              <Logo compact />
+            </div>
           </div>
 
-          <nav className="min-h-0 flex-1 overflow-y-auto px-2 pb-8">
+          <nav className="min-h-0 flex-1 overflow-y-auto px-3 py-5 sm:px-4">
             {navItems.map((item) => {
               const active =
                 item.href === "/"
@@ -210,20 +226,27 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="flex items-center gap-4 border-b border-[#E8E4DC] px-4 py-4"
+                  className={cn(
+                    "mb-1.5 flex items-center gap-4 rounded-xl px-3 py-3.5 transition-colors",
+                    active
+                      ? "bg-gold/15"
+                      : "hover:bg-white/5",
+                  )}
                 >
                   <span
                     className={cn(
                       "grid size-11 shrink-0 place-items-center rounded-full",
-                      active ? "bg-gold text-navy" : "bg-[#F1EEE8] text-navy",
+                      active
+                        ? "bg-gold text-navy"
+                        : "border border-gold/25 bg-white/5 text-gold",
                     )}
                   >
                     <Icon className="size-5" />
                   </span>
                   <span
                     className={cn(
-                      "font-sans text-[13px] font-bold uppercase tracking-[0.14em]",
-                      active ? "text-gold" : "text-navy",
+                      "font-sans text-[13px] font-bold uppercase tracking-[0.16em]",
+                      active ? "text-gold" : "text-white",
                     )}
                   >
                     {item.label}
@@ -233,25 +256,19 @@ export function Header() {
             })}
           </nav>
 
-          <div className="px-5 pb-8">
-            <SocialLinks variant="light" className="mb-5" />
+          <div className="border-t border-gold/35 px-5 py-6">
+            <p className="mb-3 font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-gold">
+              Follow us
+            </p>
+            <SocialLinks />
             <Link
               href="/book"
               onClick={() => setOpen(false)}
-              className="inline-flex w-full items-center justify-center bg-navy px-5 py-3.5 font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-white"
+              className="mt-5 inline-flex w-full items-center justify-center bg-gold px-5 py-3.5 font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-navy transition-colors hover:bg-gold/85"
             >
               Book Appointment
             </Link>
           </div>
-
-          <button
-            type="button"
-            aria-label="Close menu"
-            onClick={() => setOpen(false)}
-            className="absolute top-1/2 right-0 z-10 grid size-10 translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-navy text-gold shadow-lg"
-          >
-            <ChevronLeft className="size-4" />
-          </button>
         </aside>
       </div>
     </>
