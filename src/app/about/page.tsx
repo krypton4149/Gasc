@@ -120,7 +120,7 @@ export default function AboutPage() {
             {aboutProcess.map((step) => (
               <li
                 key={step.number}
-                className="grid grid-cols-[2rem_1fr] items-start gap-x-4 gap-y-2 border-b border-neutral-200/90 py-6 lg:grid-cols-[2rem_9rem_1fr] lg:items-center lg:gap-x-8 lg:py-7"
+                className="grid grid-cols-[2rem_minmax(0,1fr)] items-start gap-x-4 gap-y-2 border-b border-neutral-200/90 py-6 lg:grid-cols-[2rem_9rem_1fr] lg:items-center lg:gap-x-8 lg:py-7"
               >
                 <span className="font-sans text-[11px] font-medium tracking-wide text-gold">
                   {step.number}
@@ -128,7 +128,7 @@ export default function AboutPage() {
                 <h3 className="font-display text-xl font-semibold text-navy sm:text-[22px]">
                   {step.title}
                 </h3>
-                <p className="col-span-2 font-sans text-[15px] font-normal leading-7 text-neutral-500 lg:col-span-1 xl:whitespace-nowrap">
+                <p className="col-span-2 font-sans text-[15px] font-normal leading-7 text-neutral-500 lg:col-span-1">
                   {step.copy}
                 </p>
               </li>

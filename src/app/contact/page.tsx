@@ -48,8 +48,8 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-[#F9F5F1]">
-        <div className="mx-auto grid max-w-[1400px] gap-10 px-4 py-10 sm:px-6 sm:py-16 md:grid-cols-[minmax(16rem,20rem)_minmax(0,1fr)] lg:grid-cols-[minmax(16rem,22rem)_minmax(0,1fr)] lg:gap-0 lg:px-8 lg:py-20 xl:px-12">
-          <div className="md:border-r md:border-[#E8E4DC] md:pr-8 lg:pr-12">
+        <div className="mx-auto grid min-w-0 max-w-[1400px] gap-10 px-4 py-10 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] lg:gap-0 lg:px-8 lg:py-20 xl:px-12">
+          <div className="min-w-0 lg:border-r lg:border-[#E8E4DC] lg:pr-12">
             <div className="border-t border-[#E8E4DC] py-8">
               <p className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#B0AAA0]">
                 Direct Contact
@@ -80,6 +80,27 @@ export default function ContactPage() {
               </p>
               <p className="mt-4 max-w-xs font-sans text-[15px] font-semibold leading-7 text-navy">
                 {siteConfig.address}
+              </p>
+            </div>
+
+            <div className="border-t border-[#E8E4DC] py-8">
+              <p className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-[#B0AAA0]">
+                Company
+              </p>
+              <p className="mt-4 max-w-xs font-sans text-[15px] font-semibold leading-7 text-navy">
+                {siteConfig.registeredName}
+              </p>
+              <p className="mt-5 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-gold">
+                CIN
+              </p>
+              <p className="mt-1.5 break-all font-sans text-[15px] font-semibold tracking-wide text-navy">
+                {siteConfig.cin}
+              </p>
+              <p className="mt-5 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-gold">
+                Incorporated
+              </p>
+              <p className="mt-1.5 font-sans text-[15px] font-semibold text-navy">
+                {siteConfig.incorporatedOn}
               </p>
             </div>
 
@@ -122,7 +143,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="md:pl-8 lg:pl-12 xl:pl-16">
+          <div className="min-w-0 lg:pl-12 xl:pl-16">
             <div className="border-t border-[#E8E4DC] pt-8">
               <h2 className="font-display text-[1.85rem] font-bold text-navy sm:text-[2.15rem]">
                 Send a Message

@@ -52,13 +52,13 @@ export default function HomePage() {
           </div>
           </div>
 
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-14 sm:gap-y-10 lg:min-w-[280px] xl:min-w-[320px]">
+          <dl className="grid min-w-0 grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-14 sm:gap-y-10 lg:min-w-[280px] xl:min-w-[320px]">
             {heroStats.map((stat) => (
               <div key={stat.label}>
                 <dd className="font-display text-4xl font-bold leading-none text-gold sm:text-5xl">
                   {stat.value}
                 </dd>
-                <dt className="mt-2 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-white/55 sm:text-[11px]">
+                <dt className="mt-2 font-mono text-[10px] font-medium uppercase leading-4 tracking-[0.12em] text-white/55 sm:text-[11px] sm:tracking-[0.16em]">
                   {stat.label}
                 </dt>
               </div>
@@ -120,11 +120,11 @@ export default function HomePage() {
 
       <section id="why" className="bg-navy text-white">
         <div className="border-b border-white/10">
-          <div className="mx-auto flex max-w-6xl gap-x-6 gap-y-3 overflow-x-auto px-4 py-4 [scrollbar-width:none] sm:flex-wrap sm:overflow-visible sm:px-6 [&::-webkit-scrollbar]:hidden">
+          <div className="mx-auto flex max-w-6xl flex-wrap gap-x-6 gap-y-3 px-4 py-4 sm:px-6">
             {whyValues.map((value) => (
               <p
                 key={value}
-                className="flex shrink-0 items-center gap-2 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-warm/80"
+                className="flex min-w-0 items-center gap-2 font-sans text-[10px] font-medium uppercase tracking-[0.14em] text-warm/80 sm:tracking-[0.18em]"
               >
                 <span aria-hidden className="size-1.5 bg-gold" />
                 {value}

@@ -64,7 +64,7 @@ export function Footer() {
         aria-hidden
         className="h-px w-full bg-[linear-gradient(to_right,transparent_0%,#c79a32_50%,transparent_100%)]"
       />
-      <div className="grid gap-10 py-12 pl-4 pr-4 sm:gap-12 sm:py-16 sm:pl-5 sm:pr-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 lg:pl-8 xl:pl-10">
+      <div className="grid min-w-0 gap-10 py-12 pl-4 pr-4 sm:gap-12 sm:py-16 sm:pl-5 sm:pr-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 lg:pl-8 xl:pl-10">
         <div className="min-w-0 max-w-xs">
           <Link href="/" className="flex items-center gap-3">
             <Image
@@ -178,7 +178,8 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="flex flex-col gap-3 py-5 pl-4 pr-4 sm:flex-row sm:items-center sm:justify-between sm:pl-5 sm:pr-6 lg:pl-8 xl:pl-10">
           <p className="font-sans text-xs leading-5 text-warm/70">
-            © {year} Gupta Associate Consultancy Service. All Rights Reserved.
+            © {year} {siteConfig.registeredName}. All Rights Reserved.
+            <span className="mt-1 block break-all">CIN: {siteConfig.cin}</span>
           </p>
           <p className="font-sans text-xs leading-5 text-warm/70 sm:text-right">
             {practiceAreas.map((area, index) => (

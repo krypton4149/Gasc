@@ -16,7 +16,7 @@ function MemberPortrait({
   member: (typeof leadershipTeam)[number]
 }) {
   return (
-    <div className="relative size-20 overflow-hidden rounded-full ring-1 ring-gold/80 sm:size-36 lg:size-52">
+    <div className="relative size-28 overflow-hidden rounded-full ring-1 ring-gold/80 sm:size-36 lg:size-52">
       <Image
         src={member.photo}
         alt={member.name}
@@ -27,7 +27,7 @@ function MemberPortrait({
           "object-cover",
           "photoClass" in member && member.photoClass
             ? member.photoClass
-            : "scale-[1.18] object-[center_30%]",
+            : "scale-[1.06] object-[center_22%]",
         )}
       />
     </div>
@@ -74,7 +74,7 @@ export default function LeadershipPage() {
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
           <span aria-hidden className="block h-px w-10 bg-gold" />
           <p className="mt-5 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-[#B0AAA0]">
-            Meet the Partners
+            Meet the Team
           </p>
           <h2 className="mt-3 max-w-xl font-display text-[1.65rem] font-bold leading-[1.18] text-navy sm:text-4xl lg:text-[2.65rem]">
             Leadership with
@@ -98,18 +98,18 @@ export default function LeadershipPage() {
                 >
                   <div
                     className={cn(
-                      "flex items-start gap-4 sm:gap-8 lg:items-center lg:gap-14",
+                      "flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-8 lg:items-center lg:gap-14",
                       reverse && "lg:flex-row-reverse",
                     )}
                   >
-                    <div className="flex w-20 shrink-0 flex-col items-start gap-3 sm:w-36 lg:w-52">
+                    <div className="flex items-center gap-4 sm:w-36 sm:shrink-0 sm:flex-col sm:items-start sm:gap-3 lg:w-52">
                       <span className="font-sans text-[11px] font-medium tracking-[0.2em] text-gold">
                         {number}
                       </span>
                       <MemberPortrait member={member} />
                     </div>
 
-                    <div className="min-w-0 flex-1 pt-6 sm:pt-7 lg:pt-0">
+                    <div className="min-w-0 flex-1 lg:pt-0">
                       <h3 className="font-display text-[1.45rem] font-bold leading-tight text-navy sm:text-[1.95rem] lg:text-[2.15rem]">
                         {member.name}
                       </h3>

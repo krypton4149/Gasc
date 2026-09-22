@@ -98,9 +98,9 @@ export function ContactForm() {
           event.stopPropagation()
           void form.handleSubmit(redirectToWhatsApp)(event)
         }}
-        className="grid gap-8"
+        className="grid w-full min-w-0 gap-8"
       >
-        <div className="grid gap-8 sm:grid-cols-2 sm:gap-x-10">
+        <div className="grid min-w-0 gap-8 sm:grid-cols-2 sm:gap-x-10">
           <FormField
             control={form.control}
             name="name"

@@ -51,7 +51,7 @@ export function PracticeCatalogue() {
       <div className="mx-auto max-w-[1400px] px-5 py-10 pb-16 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:px-12">
         <nav
           aria-label="Practice areas"
-          className="-mx-5 flex gap-0 overflow-x-auto border-b border-[#E8E4DC] px-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-wrap sm:gap-x-10 sm:overflow-visible sm:px-0 lg:gap-x-12"
+          className="-mx-5 flex gap-0 overflow-x-auto overscroll-x-contain border-b border-[#E8E4DC] px-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:flex-wrap sm:gap-x-10 sm:overflow-visible sm:px-0 lg:gap-x-12"
         >
           {practiceCatalogue.map((item) => {
             const isActive = item.slug === active
@@ -61,7 +61,7 @@ export function PracticeCatalogue() {
                 key={item.slug}
                 href={`#${item.slug}`}
                 onClick={() => setActive(item.slug)}
-                className={`shrink-0 pb-3 pr-6 font-sans text-[12px] font-medium tracking-wide whitespace-nowrap transition-colors last:pr-0 sm:pr-0 sm:text-[13px] ${
+                className={`shrink-0 pb-3 pr-6 font-sans text-[12px] font-medium tracking-wide whitespace-nowrap transition-colors duration-200 last:pr-0 sm:pr-0 sm:text-[13px] ${
                   isActive
                     ? "-mb-px border-b-2 border-navy text-navy"
                     : "-mb-px border-b-2 border-transparent text-[#949CA5] hover:text-navy"
@@ -77,7 +77,7 @@ export function PracticeCatalogue() {
         </nav>
 
         <div className="mt-8 flex flex-col gap-3 sm:mt-12 sm:gap-4 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
-          <h2 className="max-w-full font-display text-[1.35rem] font-bold leading-[1.25] text-navy sm:text-[1.85rem] lg:text-[2.5rem] xl:whitespace-nowrap">
+          <h2 className="max-w-full font-display text-[1.35rem] font-bold leading-[1.25] text-navy sm:text-[1.85rem] lg:text-[2.5rem]">
             <HeadingTitle title={area.title} />
           </h2>
           <p className="max-w-md font-sans text-[13px] font-normal leading-6 text-[#8E8E8E] sm:text-[15px] sm:leading-7 lg:pt-2 lg:text-right">

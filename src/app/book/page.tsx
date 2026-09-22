@@ -40,18 +40,22 @@ export default function BookPage() {
             </p>
           </div>
 
-          <p className="mt-8 flex flex-wrap gap-x-3 gap-y-2 font-sans text-[10px] font-medium uppercase tracking-[0.16em] text-white/50 sm:text-[11px] sm:tracking-[0.22em]">
+          <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 font-sans text-[10px] font-medium uppercase tracking-[0.16em] text-white/50 sm:text-[11px] sm:tracking-[0.22em]">
             Confidential
-            <span className="mx-3 text-white/25">—</span>
+            <span aria-hidden className="text-white/25">
+              —
+            </span>
             Professional
-            <span className="mx-3 text-white/25">—</span>
+            <span aria-hidden className="text-white/25">
+              —
+            </span>
             Client-Focused
           </p>
         </div>
       </section>
 
       <section className="bg-[#F9F5F1]">
-        <div className="mx-auto max-w-[1400px] px-4 py-8 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:px-12">
+        <div className="mx-auto max-w-[1400px] min-w-0 px-4 py-8 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:px-12">
           <Suspense
             fallback={
               <p className="font-sans text-sm text-[#8E8E8E]">Loading form…</p>

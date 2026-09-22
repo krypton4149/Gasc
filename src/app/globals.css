@@ -133,11 +133,29 @@
   }
 
   html {
-    @apply scroll-smooth overflow-x-clip;
+    @apply scroll-smooth overflow-x-hidden;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased overflow-x-clip;
+    @apply bg-background text-foreground font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   img,
@@ -152,6 +170,11 @@
   h3,
   h4 {
     @apply font-serif tracking-tight text-foreground;
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
   }
 }
 

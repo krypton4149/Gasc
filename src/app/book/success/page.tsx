@@ -32,7 +32,7 @@ export default async function BookingSuccessPage({ searchParams }: SuccessPagePr
               ? `We have your ${time} window on ${date}. A coordinator will confirm by SMS shortly.`
               : "A coordinator will confirm your window by SMS shortly."}
           </p>
-          <div className="flex justify-center gap-3">
+          <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center">
             <Button asChild>
               <Link href="/">Back home</Link>
             </Button>

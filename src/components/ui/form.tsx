@@ -76,7 +76,7 @@ function FormItem({ className, ...props }: React.ComponentProps<"div">) {
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div className={cn("flex flex-col gap-2", className)} {...props} />
+      <div className={cn("flex min-w-0 flex-col gap-2", className)} {...props} />
     </FormItemContext.Provider>
   )
 }

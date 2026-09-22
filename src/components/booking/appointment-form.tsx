@@ -85,7 +85,7 @@ function GoldRadio({
       role="radio"
       aria-checked={checked}
       onClick={onSelect}
-      className="inline-flex items-center gap-2.5 text-left"
+      className="inline-flex max-w-full min-w-0 items-center gap-2.5 text-left"
     >
       <span
         className={cn(
@@ -101,7 +101,7 @@ function GoldRadio({
       </span>
       <span
         className={cn(
-          "font-sans text-sm",
+          "min-w-0 font-sans text-sm leading-5",
           checked
             ? dark
               ? "text-white"
@@ -129,11 +129,11 @@ function SectionHeading({
   dark?: boolean
 }) {
   return (
-    <div className="flex items-start gap-4">
+    <div className="flex min-w-0 items-start gap-3 sm:gap-4">
       <span className="pt-1 font-sans text-[11px] font-medium text-gold">
         {number}
       </span>
-      <div>
+      <div className="min-w-0">
         <h2
           className={cn(
             "font-sans text-xl font-semibold sm:text-[1.35rem]",
@@ -291,18 +291,18 @@ export function AppointmentForm() {
           event.stopPropagation()
           void form.handleSubmit(redirectToWhatsApp)(event)
         }}
-        className="grid gap-6 md:grid-cols-[minmax(14rem,17rem)_minmax(0,1fr)] md:gap-8 lg:grid-cols-[minmax(15rem,18rem)_minmax(0,1fr)] lg:gap-10 xl:gap-14"
+        className="grid w-full min-w-0 gap-6 lg:grid-cols-[minmax(0,18rem)_minmax(0,1fr)] lg:gap-10 xl:gap-14"
       >
-        <aside className="space-y-4 md:sticky md:top-24 md:self-start lg:top-28">
+        <aside className="min-w-0 space-y-4 lg:sticky lg:top-24 lg:self-start">
           <div className="bg-navy px-4 py-5 sm:px-6 sm:py-7">
             <p className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-gold">
               Form Progress
             </p>
-            <ol className="mt-4 flex gap-3 overflow-x-auto pb-1 [scrollbar-width:none] md:mt-6 md:flex-col md:gap-4 md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden">
+            <ol className="mt-4 flex flex-wrap gap-x-4 gap-y-2 lg:mt-6 lg:flex-col lg:gap-4">
               {progress.steps.map((step, index) => {
                 const active = index === progress.activeIndex
                 return (
-                  <li key={step.label} className="shrink-0">
+                  <li key={step.label}>
                     <button
                       type="button"
                       onClick={() =>
@@ -310,11 +310,11 @@ export function AppointmentForm() {
                           .getElementById(step.id)
                           ?.scrollIntoView({ behavior: "smooth", block: "start" })
                       }
-                      className="flex min-h-11 items-center gap-2 text-left md:w-full md:gap-3"
+                      className="flex min-h-11 items-center gap-2 text-left lg:w-full lg:gap-3"
                     >
                       <span
                         className={cn(
-                          "flex size-7 items-center justify-center border font-sans text-[11px] md:size-6",
+                          "flex size-7 items-center justify-center border font-sans text-[11px] lg:size-6",
                           active
                             ? "border-white text-white"
                             : "border-white/20 text-white/35",
@@ -324,7 +324,7 @@ export function AppointmentForm() {
                       </span>
                       <span
                         className={cn(
-                          "font-sans text-[12px] md:text-sm",
+                          "font-sans text-[12px] lg:text-sm",
                           active ? "text-white" : "text-white/40",
                         )}
                       >
@@ -374,8 +374,8 @@ export function AppointmentForm() {
           </div>
         </aside>
 
-        <div className="min-w-0 space-y-0">
-          <div className="bg-navy px-4 py-8 sm:px-8 sm:py-12 lg:px-10">
+        <div className="min-w-0 w-full space-y-0">
+          <div className="w-full min-w-0 bg-navy px-4 py-8 sm:px-6 sm:py-12 lg:px-10">
             <div id="booking-01" className="scroll-mt-28">
               <SectionHeading
                 number="01"
@@ -392,7 +392,7 @@ export function AppointmentForm() {
                     <FormLabel className={labelNavy}>
                       Select Language <RequiredMark />
                     </FormLabel>
-                    <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6" role="radiogroup">
+                    <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-3" role="radiogroup">
                       {bookingLanguages.map((option) => (
                         <GoldRadio
                           key={option}
@@ -416,7 +416,7 @@ export function AppointmentForm() {
                     <FormLabel className={labelNavy}>
                       Client Type <RequiredMark />
                     </FormLabel>
-                    <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6" role="radiogroup">
+                    <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-3" role="radiogroup">
                       {bookingClientTypes.map((option) => (
                         <GoldRadio
                           key={option}
@@ -478,7 +478,7 @@ export function AppointmentForm() {
                     <FormLabel className={labelNavy}>
                       Appointment Type <RequiredMark />
                     </FormLabel>
-                    <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6" role="radiogroup">
+                    <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-3" role="radiogroup">
                       {bookingAppointmentTypes.map((option) => (
                         <GoldRadio
                           key={option}
@@ -494,7 +494,7 @@ export function AppointmentForm() {
                 )}
               />
 
-              <div className="mt-8 grid gap-8 sm:grid-cols-2">
+              <div className="mt-8 grid min-w-0 gap-8 sm:grid-cols-2">
                 <FormField
                   control={form.control}
                   name="date"
@@ -524,7 +524,7 @@ export function AppointmentForm() {
                             </button>
                           </FormControl>
                         </PopoverTrigger>
-                        <PopoverContent className="w-auto p-2" align="start">
+                        <PopoverContent className="w-auto max-w-[calc(100vw-2rem)] p-2" align="start">
                           <Calendar
                             mode="single"
                             selected={
@@ -586,7 +586,7 @@ export function AppointmentForm() {
 
           <div
             id="booking-03"
-            className="scroll-mt-28 bg-white px-4 py-8 sm:px-8 sm:py-12 lg:px-10"
+            className="scroll-mt-28 min-w-0 bg-white px-4 py-8 sm:px-6 sm:py-12 lg:px-10"
           >
             <SectionHeading
               number="03"
@@ -594,7 +594,7 @@ export function AppointmentForm() {
               subtitle="Contact details and consultation notes"
             />
 
-            <div className="mt-10 grid gap-8 sm:grid-cols-2">
+            <div className="mt-10 grid min-w-0 gap-8 sm:grid-cols-2">
               <FormField
                 control={form.control}
                 name="name"
@@ -701,7 +701,7 @@ export function AppointmentForm() {
 
           <div
             id="booking-04"
-            className="scroll-mt-28 border border-[#E8E4DC] bg-[#F9F5F1] px-4 py-8 sm:px-8 lg:px-10"
+            className="scroll-mt-28 min-w-0 border border-[#E8E4DC] bg-[#F9F5F1] px-4 py-8 sm:px-6 lg:px-10"
           >
             <SectionHeading
               number="04"
@@ -709,7 +709,7 @@ export function AppointmentForm() {
               subtitle=""
             />
 
-            <div className="mt-8 grid gap-8 sm:grid-cols-2">
+            <div className="mt-8 grid min-w-0 gap-8 sm:grid-cols-2">
               <div>
                 <FormField
                   control={form.control}
@@ -801,7 +801,7 @@ export function AppointmentForm() {
 
           <div
             id="booking-submit"
-            className="scroll-mt-28 bg-white px-4 py-8 sm:px-8 lg:px-10"
+            className="scroll-mt-28 min-w-0 bg-white px-4 py-8 sm:px-6 lg:px-10"
           >
             <FormField
               control={form.control}

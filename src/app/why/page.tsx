@@ -81,7 +81,7 @@ export default function WhyPage() {
               <p className="font-display text-4xl font-bold leading-none text-gold sm:text-5xl lg:text-[3.25rem]">
                 {stat.value}
               </p>
-              <p className="mt-3 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-white/55 sm:text-[11px]">
+              <p className="mt-3 px-1 font-sans text-[10px] font-medium uppercase leading-4 tracking-[0.12em] text-white/55 sm:text-[11px] sm:tracking-[0.18em]">
                 {stat.label}
               </p>
             </div>
@@ -122,7 +122,7 @@ export default function WhyPage() {
                         width={220}
                         height={80}
                         unoptimized
-                        className="h-16 w-auto max-w-[15rem] object-contain object-left"
+                        className="h-14 w-auto max-w-full object-contain object-left sm:h-16 sm:max-w-[15rem]"
                       />
                     ) : (
                       <span className="font-display text-xl italic leading-none text-gold">

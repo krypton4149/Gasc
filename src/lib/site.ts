@@ -10,14 +10,17 @@ export const siteConfig = {
     "Tax Consultant  ||  Legal Advisor",
     "Corporate Consultant  ||  Finance Professional",
   ],
-  tagline: "Trusted gas & energy services for homes and businesses.",
+  tagline: "Integrated legal, tax, finance and corporate advisory.",
   description:
-    "Book LPG delivery, PNG connections, appliance installation, and safety inspections across Shikohabad. Fast, certified, and dependable.",
+    "Gupta Associate Consultancy Service — law, taxation, finance and corporate advisory in Firozabad. A 20+ CA & CS team. Book a confidential consultation.",
   url: "https://gasc.local",
   locale: "en_IN",
   phone: "+91 78956 33129",
   phoneSecondary: "+91 97197 98042",
   email: "info@gacs.org.in",
+  cin: "U74999UP2022PTC166012",
+  registeredName: "Gupta Associate Consultancy Service Private Limited",
+  incorporatedOn: "20 June 2022",
   address:
     "A19-22, Ground Floor, Baldevi Tower, Suhag Nagar, Firozabad - 283203, U.P - India",
   hours: "Mon–Sat: 9:30AM – 7:30PM",
@@ -138,7 +141,7 @@ export const aboutStory = {
   heading:
     "A practice built on long-term client relationships, not transactions.",
   columns: [
-    "Gupta Associate Consultancy Service was formed as a proprietorship in 2017 by Anmol Gupta. The practice began with accounting and taxation, and has grown into an integrated advisory firm — serving individuals and businesses under one roof, with advice that works in the real world.",
+    "Gupta Associate Consultancy Service was formed as a proprietorship in 2017 by Anmol Gupta. The practice began with accounting and taxation, and was incorporated as Gupta Associate Consultancy Service Private Limited on 20 June 2022 (CIN: U74999UP2022PTC166012). It has grown into an integrated advisory firm — serving individuals and businesses under one roof, with advice that works in the real world.",
     "The firm later added two senior professionals, CA Nitin Gupta and Adv. Deepak Kumar Jain. It is supported by a total team of 20+ Chartered Accountants and Company Secretaries — including four semi-qualified members, Pratham Gupta, Ashish Gupta, Kshitiz Jain and Piyush Gupta — each contributing to the GACS standard of care.",
   ],
   stats: [
@@ -258,6 +261,7 @@ export const leadershipTeam = [
       "Taxation Industry — GST, Income Tax, VAT & Custom",
       "Finance Consultancy and SIB Cases",
       "Income Tax & GST Cases & Other",
+      "Direct & Indirect Taxes",
     ],
     bio: "Anmol Gupta is the Founder & Chairperson of GACS. He specialises in taxation — GST, income tax, VAT and custom — along with finance consultancy, SIB cases, and income tax and GST matters. He sets the standard for integrity, discretion and long-term client care, ensuring every engagement is measured by outcomes, not activity.",
   },
@@ -275,6 +279,7 @@ export const leadershipTeam = [
       "Society",
       "Trust",
       "TM & Other Intellectual Property & Others",
+      "Direct & Indirect Taxes",
     ],
     bio: "Pratham Gupta is the Founder & CEO of GACS, bringing the four practice areas together as one coordinated firm. He advises on investment and business planning, litigation and consumer matters, financing, societies and trusts, and trademarks and other intellectual property. His focus is practical execution: clear communication, dependable timelines, and advisory that works in the real world.",
   },
@@ -294,12 +299,29 @@ export const leadershipTeam = [
   {
     initials: "PYG",
     name: "Piyush Gupta",
-    role: "Associate",
-    focus: "Commerce — Law",
+    role: "Senior Executive",
+    focus: "Accounting — Audit — Taxation",
     photo: "/images/aman.png",
-    photoClass: "scale-[1.32] object-center",
+    photoClass: "scale-[1.16] object-center",
     qualifications: ["B.Com", "LL.B."],
-    bio: "Piyush Gupta is Associate at GACS, qualified in commerce and law (B.Com, LL.B.). He works alongside the firm’s founders and counsel so clients receive coordinated, practical support across the practice.",
+    specialFields: ["Accounting", "Audit", "Other Taxation", "Direct & Indirect Taxes"],
+    bio: "Piyush Gupta is Senior Executive at GACS. He works on accounting, audit and other taxation matters — short, practical support that keeps the books and filings in order.",
+  },
+  {
+    initials: "AsG",
+    name: "Ashish Gupta",
+    role: "Associate",
+    focus: "Income Tax — GST — Companies Act",
+    photo: "/images/ashish.png",
+    photoClass: "scale-[1.14] object-[center_28%]",
+    qualifications: ["B.Com", "LL.B."],
+    specialFields: [
+      "Income Tax",
+      "GST",
+      "Companies Act",
+      "Direct & Indirect Taxes",
+    ],
+    bio: "Ashish Gupta works across income tax, GST, the Companies Act, and direct and indirect taxes — clear, practical support on the matters that sit with the firm every day.",
   },
 ] as const
 

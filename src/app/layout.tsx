@@ -50,11 +50,12 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "GASC",
-    "LPG delivery Shikohabad",
-    "PNG connection",
-    "gas appliance installation",
-    "safety inspection",
+    "GACS",
+    "Gupta Associate Consultancy",
+    "tax consultant Firozabad",
+    "legal advisor",
+    "corporate consultant",
+    "finance professional",
   ],
   openGraph: {
     title: siteConfig.legalName,
@@ -71,10 +72,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${manrope.variable} ${sourceSerif.variable} ${playfair.variable} ${greatVibes.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col font-sans">
+      <body className="flex min-h-full min-w-0 flex-col font-sans">
         <Providers>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="min-w-0 flex-1">{children}</main>
           <Footer />
         </Providers>
       </body>

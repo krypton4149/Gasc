@@ -39,8 +39,8 @@ function Logo({
     <Link
       href="/"
       className={cn(
-        "flex min-w-0 items-center gap-2.5 sm:gap-3",
-        compact ? "flex-1" : "shrink-0",
+        "flex min-w-0 items-center gap-2 sm:gap-3",
+        compact && "flex-1",
       )}
     >
       <Image
@@ -50,7 +50,7 @@ function Logo({
         height={siteConfig.logoHeight}
         className={cn(
           "shrink-0 object-contain",
-          compact ? "size-11" : "size-12 sm:size-[58px]",
+          compact ? "size-11" : "size-10 sm:size-12 lg:size-[58px]",
         )}
         preload
         unoptimized
@@ -66,7 +66,7 @@ function Logo({
             "font-bold uppercase leading-none",
             compact
               ? "text-[12px] tracking-[0.06em] sm:text-[13px] sm:tracking-[0.08em]"
-              : "whitespace-nowrap text-[14px] tracking-[0.08em] sm:text-[17px] sm:tracking-[0.1em]",
+              : "text-[13px] tracking-[0.06em] sm:whitespace-nowrap sm:text-[14px] sm:tracking-[0.08em] lg:text-[17px] lg:tracking-[0.1em]",
           )}
         >
           {siteConfig.brandName}
@@ -91,7 +91,7 @@ function Logo({
                 "font-extrabold uppercase leading-snug tracking-[0.06em] text-gold [text-shadow:0.35px_0_0_currentColor]",
                 compact
                   ? "text-[7px] sm:text-[8px]"
-                  : "whitespace-nowrap text-[8px] sm:text-[9.5px] sm:tracking-[0.1em]",
+                  : "text-[7px] sm:whitespace-nowrap sm:text-[8px] md:text-[9.5px] md:tracking-[0.1em]",
               )}
             >
               {line}
@@ -150,8 +150,8 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-y border-gold/80 bg-navy">
-        <div className="mx-auto grid min-h-[88px] max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-3 py-2.5 sm:gap-4 sm:px-6 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:px-8">
+      <header className="sticky top-0 z-40 border-y border-gold/80 bg-navy pt-[env(safe-area-inset-top)]">
+        <div className="mx-auto grid min-h-[76px] max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-2 sm:min-h-[88px] sm:gap-4 sm:px-6 sm:py-2.5 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:px-8">
           <Logo />
 
           <NavLinks />
