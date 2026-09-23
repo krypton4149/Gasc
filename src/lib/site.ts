@@ -12,7 +12,7 @@ export const siteConfig = {
   ],
   tagline: "Integrated legal, tax, finance and corporate advisory.",
   description:
-    "Gupta Associate Consultancy Service — law, taxation, finance and corporate advisory in Firozabad. A 20+ CA & CS team. Book a confidential consultation.",
+    "Gupta Associate Consultancy Service — law, taxation, finance and corporate advisory in Firozabad. 20+ team employees of CAs and CSs. Book a confidential consultation.",
   url: "https://gasc.local",
   locale: "en_IN",
   phone: "+91 78956 33129",
@@ -142,12 +142,12 @@ export const aboutStory = {
     "A practice built on long-term client relationships, not transactions.",
   columns: [
     "Gupta Associate Consultancy Service was formed as a proprietorship in 2017 by Anmol Gupta. The practice began with accounting and taxation, and was incorporated as Gupta Associate Consultancy Service Private Limited on 20 June 2022 (CIN: U74999UP2022PTC166012). It has grown into an integrated advisory firm — serving individuals and businesses under one roof, with advice that works in the real world.",
-    "The firm later added two senior professionals, CA Nitin Gupta and Adv. Deepak Kumar Jain. It is supported by a total team of 20+ Chartered Accountants and Company Secretaries — including four semi-qualified members, Pratham Gupta, Ashish Gupta, Kshitiz Jain and Piyush Gupta — each contributing to the GACS standard of care.",
+    "The firm later added two senior professionals, CA Nitin Gupta and Adv. Deepak Kumar Jain. It is supported by 20+ team employees of CAs and CSs — including CS Nimisha Tayal on corporate compliance and Ministry of Corporate Affairs work — each contributing to the GACS standard of care.",
   ],
   stats: [
     { value: "9+", label: "Years of Practice" },
     { value: "2500+", label: "Clients Served" },
-    { value: "20+", label: "CA & CS Team" },
+    { value: "20+", label: "CA & CS Employees" },
     { value: "100%", label: "Satisfaction Rate" },
   ],
 } as const
@@ -155,14 +155,14 @@ export const aboutStory = {
 export const heroStats = [
   { value: "9+", label: "Years Practice" },
   { value: "2500+", label: "Clients Served" },
-  { value: "20+", label: "CA & CS Team" },
+  { value: "20+", label: "CA & CS Employees" },
   { value: "100%", label: "Satisfaction Rate" },
 ] as const
 
 export const whyStats = [
   { value: "9+", label: "Years of Practice" },
   { value: "2500+", label: "Clients Served" },
-  { value: "20+", label: "CA & CS Team" },
+  { value: "20+", label: "CA & CS Employees" },
   { value: "100%", label: "Client Retention" },
 ] as const
 
@@ -295,6 +295,20 @@ export const leadershipTeam = [
       "Practicing since 2002",
     ],
     bio: "Deepak Kumar Jain is Associate Partner at GACS, bringing more than two decades of courtroom and advisory experience to the firm. Qualified in commerce and law (B.Com, LL.B.), he practises across civil, criminal and family matters, with a primary focus on litigation. In practice since 2002, he has guided individuals and families through disputes, proceedings and sensitive personal matters with clarity and discretion. At GACS he works alongside the firm’s tax, finance and corporate teams so clients receive legal representation that is coordinated, practical and firmly grounded in their wider interests.",
+  },
+  {
+    initials: "NT",
+    name: "Nimisha Tayal",
+    role: "Company Secretary",
+    focus: "Corporate Compliance — MCA — Others",
+    qualifications: ["CS"],
+    specialFields: [
+      "Corporate Compliance",
+      "Ministry of Corporate Affairs",
+      "Others",
+      "Direct & Indirect Taxes",
+    ],
+    bio: "Nimisha Tayal is Company Secretary at GACS. She deals in corporate compliance, including Ministry of Corporate Affairs work and other company-law and statutory matters — filings, records and liaison that keep a company in good standing. She works with the firm’s legal and tax teams so MCA, secretarial and day-to-day corporate compliance stay coordinated under one roof.",
   },
   {
     initials: "PYG",

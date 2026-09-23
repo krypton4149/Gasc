@@ -15,8 +15,21 @@ function MemberPortrait({
 }: {
   member: (typeof leadershipTeam)[number]
 }) {
+  const frame =
+    "relative size-28 overflow-hidden rounded-full ring-1 ring-gold/80 sm:size-36 lg:size-52"
+
+  if (!("photo" in member) || !member.photo) {
+    return (
+      <div className={cn(frame, "grid place-items-center bg-navy")}>
+        <span className="font-display text-xl font-bold tracking-[0.08em] text-gold sm:text-2xl lg:text-3xl">
+          {member.initials}
+        </span>
+      </div>
+    )
+  }
+
   return (
-    <div className="relative size-28 overflow-hidden rounded-full ring-1 ring-gold/80 sm:size-36 lg:size-52">
+    <div className={frame}>
       <Image
         src={member.photo}
         alt={member.name}
@@ -63,9 +76,8 @@ export default function LeadershipPage() {
 
           <p className="max-w-md pb-1 font-sans text-[15px] font-normal leading-7 text-white sm:text-base lg:justify-self-start">
             Decades of combined expertise across law, taxation and corporate
-            practice — a total team of 20+ Chartered Accountants and Company
-            Secretaries, each professional bringing depth, each working in
-            concert.
+            practice — a total of 20+ team employees of CAs and CSs, each
+            professional bringing depth, each working in concert.
           </p>
         </div>
       </section>
@@ -81,9 +93,10 @@ export default function LeadershipPage() {
             <span className="mt-1 block italic text-gold">Proven Practice</span>
           </h2>
           <p className="mt-5 max-w-2xl font-sans text-[15px] leading-7 text-[#8E8E8E]">
-            Founders and counsel who combine legal training with specialised
-            fields — taxation, investment, intellectual property and litigation
-            — under one roof.
+            Founders, counsel and a Company Secretary who combine legal,
+            secretarial and specialised fields — taxation, investment,
+            intellectual property, litigation and corporate compliance — under
+            one roof.
           </p>
 
           <div className="mt-10 space-y-6 lg:mt-14 lg:space-y-8">
@@ -181,9 +194,9 @@ export default function LeadershipPage() {
               <span className="mt-1 block italic text-gold">Success</span>
             </h2>
             <p className="mt-5 max-w-xl font-sans text-[15px] font-normal leading-7 text-white/75 sm:leading-8">
-              Every member of the GACS team — 20+ Chartered Accountants and
-              Company Secretaries — brings deep domain expertise, a client-first
-              mindset and an unwavering commitment to professional excellence.
+              Every member of the GACS team — 20+ team employees of CAs and
+              CSs — brings deep domain expertise, a client-first mindset and an
+              unwavering commitment to professional excellence.
             </p>
           </div>
 

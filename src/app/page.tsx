@@ -32,8 +32,8 @@ export default function HomePage() {
           </h1>
           <p className="mt-6 max-w-lg text-base leading-7 text-white/70 sm:text-lg">
             A multidisciplinary consultancy serving individuals and businesses
-            across law, taxation, finance and corporate advisory — backed by a
-            team of 20+ Chartered Accountants and Company Secretaries.
+            across law, taxation, finance and corporate advisory — backed by
+            20+ team employees of CAs and CSs.
           </p>
           <div className="mt-8 flex w-full flex-col gap-4 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
             <Link
