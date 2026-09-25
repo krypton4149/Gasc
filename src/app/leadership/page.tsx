@@ -15,21 +15,8 @@ function MemberPortrait({
 }: {
   member: (typeof leadershipTeam)[number]
 }) {
-  const frame =
-    "relative size-28 overflow-hidden rounded-full ring-1 ring-gold/80 sm:size-36 lg:size-52"
-
-  if (!("photo" in member) || !member.photo) {
-    return (
-      <div className={cn(frame, "grid place-items-center bg-navy")}>
-        <span className="font-display text-xl font-bold tracking-[0.08em] text-gold sm:text-2xl lg:text-3xl">
-          {member.initials}
-        </span>
-      </div>
-    )
-  }
-
   return (
-    <div className={frame}>
+    <div className="relative size-28 overflow-hidden rounded-full ring-1 ring-gold/80 sm:size-36 lg:size-52">
       <Image
         src={member.photo}
         alt={member.name}
