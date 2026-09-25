@@ -181,25 +181,38 @@ export function Footer() {
             © {year} {siteConfig.registeredName}. All Rights Reserved.
             <span className="mt-1 block break-all">CIN: {siteConfig.cin}</span>
           </p>
-          <p className="font-sans text-xs leading-5 text-warm/70 sm:text-right">
-            {practiceAreas.map((area, index) => (
-              <span key={area.slug}>
-                {index > 0 ? " · " : null}
-                <Link
-                  href={`/services#${area.slug}`}
-                  className="transition-colors hover:text-gold"
-                >
-                  {area.slug === "legal"
-                    ? "Legal Advisory"
-                    : area.slug === "taxation"
-                      ? "Tax"
-                      : area.slug === "finance"
-                        ? "Finance"
-                        : "Business"}
-                </Link>
-              </span>
-            ))}
-          </p>
+          <div className="flex flex-col gap-2 sm:items-end sm:text-right">
+            <p className="font-sans text-xs leading-5 text-warm/70">
+              {practiceAreas.map((area, index) => (
+                <span key={area.slug}>
+                  {index > 0 ? " · " : null}
+                  <Link
+                    href={`/services#${area.slug}`}
+                    className="transition-colors hover:text-gold"
+                  >
+                    {area.slug === "legal"
+                      ? "Legal Advisory"
+                      : area.slug === "taxation"
+                        ? "Tax"
+                        : area.slug === "finance"
+                          ? "Finance"
+                          : "Business"}
+                  </Link>
+                </span>
+              ))}
+            </p>
+            <p className="font-sans text-xs leading-5 text-warm/60">
+              Website developed by{" "}
+              <a
+                href="https://shikohabadcreativeco.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-gold/90 transition-colors hover:text-gold"
+              >
+                Shikohabad Creative Co.
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
