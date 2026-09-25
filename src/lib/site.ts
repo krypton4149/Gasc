@@ -12,7 +12,7 @@ export const siteConfig = {
   ],
   tagline: "Integrated legal, tax, finance and corporate advisory.",
   description:
-    "Gupta Associate Consultancy Service — law, taxation, finance and corporate advisory in Firozabad. 20+ team employees of CAs and CSs. Book a confidential consultation.",
+    "Gupta Associate Consultancy Service — law, taxation, finance and corporate advisory in Firozabad. 20+ team employees, including CAs & CSs. Book a confidential consultation.",
   url: "https://gasc.local",
   locale: "en_IN",
   phone: "+91 78956 33129",
@@ -142,7 +142,7 @@ export const aboutStory = {
     "A practice built on long-term client relationships, not transactions.",
   columns: [
     "Gupta Associate Consultancy Service was formed as a proprietorship in 2017 by Anmol Gupta. The practice began with accounting and taxation, and was incorporated as Gupta Associate Consultancy Service Private Limited on 20 June 2022 (CIN: U74999UP2022PTC166012). It has grown into an integrated advisory firm — serving individuals and businesses under one roof, with advice that works in the real world.",
-    "The firm later added two senior professionals, CA Nitin Gupta and Adv. Deepak Kumar Jain. It is supported by 20+ team employees of CAs and CSs — including CS Nimisha Tayal on corporate compliance and Ministry of Corporate Affairs work — each contributing to the GACS standard of care.",
+    "The firm later added two senior professionals, CA Nitin Gupta and Adv. Deepak Kumar Jain. It is supported by 20+ team employees, including CAs & CSs — with CS Nimisha Tayal on corporate compliance and Ministry of Corporate Affairs work — each contributing to the GACS standard of care.",
   ],
   stats: [
     { value: "9+", label: "Years of Practice" },
@@ -192,7 +192,7 @@ export const testimonials = [
     quote:
       "Their finance, accounting and commercial advisory gave our showroom the clarity we needed. Decisions are faster, the books are sound, and we know where we stand.",
     name: "Honda Showroom",
-    role: "Mr. Naveen Mittal & Mr. Kumal Mittal",
+    role: "Mr. Naveen Mittal & Mr. Kushal Mittal",
     logo: "/images/honda.png",
   },
   {
@@ -301,6 +301,8 @@ export const leadershipTeam = [
     name: "Nimisha Tayal",
     role: "Company Secretary",
     focus: "Corporate Compliance — MCA — Others",
+    photo: "/images/6.jpg",
+    photoClass: "scale-[1.08] object-[center_22%]",
     qualifications: ["CS"],
     specialFields: [
       "Corporate Compliance",

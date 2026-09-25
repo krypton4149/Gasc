@@ -76,7 +76,7 @@ export default function LeadershipPage() {
 
           <p className="max-w-md pb-1 font-sans text-[15px] font-normal leading-7 text-white sm:text-base lg:justify-self-start">
             Decades of combined expertise across law, taxation and corporate
-            practice — a total of 20+ team employees of CAs and CSs, each
+            practice — a total of 20+ team employees, including CAs & CSs, each
             professional bringing depth, each working in concert.
           </p>
         </div>
@@ -194,9 +194,9 @@ export default function LeadershipPage() {
               <span className="mt-1 block italic text-gold">Success</span>
             </h2>
             <p className="mt-5 max-w-xl font-sans text-[15px] font-normal leading-7 text-white/75 sm:leading-8">
-              Every member of the GACS team — 20+ team employees of CAs and
-              CSs — brings deep domain expertise, a client-first mindset and an
-              unwavering commitment to professional excellence.
+              Every member of the GACS team — 20+ team employees, including
+              CAs & CSs — brings deep domain expertise, a client-first mindset
+              and an unwavering commitment to professional excellence.
             </p>
           </div>
 
