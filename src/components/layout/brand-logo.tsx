@@ -71,7 +71,7 @@ export function BrandLogo({
         </span>
         <span
           className={cn(
-            "mt-1.5 font-sans font-semibold uppercase leading-[1.35] tracking-[0.06em] text-gold",
+            "mt-1.5 font-sans font-semibold uppercase leading-[1.35] tracking-[0.06em] text-white",
             compact
               ? "text-[6.5px] sm:text-[7.5px]"
               : "text-[6px] sm:mt-2 sm:text-[7.5px] lg:text-[8px]",
@@ -81,7 +81,7 @@ export function BrandLogo({
         </span>
         <span
           className={cn(
-            "font-sans font-semibold uppercase leading-[1.35] tracking-[0.06em] text-gold",
+            "font-sans font-semibold uppercase leading-[1.35] tracking-[0.06em] text-white",
             compact
               ? "text-[6.5px] sm:text-[7.5px]"
               : "text-[6px] sm:text-[7.5px] lg:text-[8px]",
