@@ -97,10 +97,10 @@ export default function ContactPage() {
                 {siteConfig.cin}
               </p>
               <p className="mt-5 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-gold">
-                Incorporated
+                Established
               </p>
               <p className="mt-1.5 font-sans text-[15px] font-semibold text-navy">
-                {siteConfig.incorporatedOn}
+                {siteConfig.establishedOn}
               </p>
             </div>
 

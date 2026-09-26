@@ -27,7 +27,7 @@ function HeadingTitle({ title }: { title: string }) {
 }
 
 export function PracticeCatalogue() {
-  const [active, setActive] = useState<PracticeSlug>("legal")
+  const [active, setActive] = useState<PracticeSlug>("taxation")
   const area =
     practiceCatalogue.find((item) => item.slug === active) ?? practiceCatalogue[0]
 

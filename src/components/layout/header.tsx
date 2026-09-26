@@ -28,77 +28,81 @@ const drawerIcons = {
   "/contact": Mail,
 } as const
 
-function Logo({
-  inverted = false,
-  compact = false,
-}: {
-  inverted?: boolean
-  compact?: boolean
-}) {
+function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <Link
       href="/"
       className={cn(
-        "flex min-w-0 items-center gap-2 sm:gap-3",
+        "inline-flex min-w-0 shrink-0 items-center gap-2.5 overflow-visible sm:gap-3.5",
         compact && "flex-1",
       )}
     >
       <Image
-        src={siteConfig.logo}
-        alt={`${siteConfig.brandName} logo`}
-        width={siteConfig.logoWidth}
-        height={siteConfig.logoHeight}
+        src="/images/logo1.png"
+        alt=""
+        width={1313}
+        height={1198}
         className={cn(
           "shrink-0 object-contain",
-          compact ? "size-11" : "size-10 sm:size-12 lg:size-[58px]",
+          compact
+            ? "size-12 sm:size-14"
+            : "size-14 sm:size-16 lg:size-[4.75rem]",
         )}
         preload
         unoptimized
       />
       <span
         className={cn(
-          "flex min-w-0 flex-col items-start justify-center text-left",
-          inverted ? "text-navy" : "text-white",
+          "flex min-w-0 flex-col",
+          compact ? "pr-1" : "max-w-[12rem] sm:max-w-none",
         )}
       >
         <span
           className={cn(
-            "font-bold uppercase leading-none",
+            "font-sans font-bold uppercase leading-none tracking-[0.04em] text-white",
             compact
-              ? "text-[12px] tracking-[0.06em] sm:text-[13px] sm:tracking-[0.08em]"
-              : "text-[13px] tracking-[0.06em] sm:whitespace-nowrap sm:text-[14px] sm:tracking-[0.08em] lg:text-[17px] lg:tracking-[0.1em]",
+              ? "text-[13px] sm:text-[15px]"
+              : "text-[13px] sm:text-[15px] lg:text-[17px]",
           )}
         >
-          {siteConfig.brandName}
+          Gupta Associate
+        </span>
+        <span className="mt-1.5 flex items-center gap-1.5 sm:gap-2">
+          <span aria-hidden className="h-px w-3 shrink-0 bg-gold sm:w-4" />
+          <span
+            className={cn(
+              "font-sans font-medium uppercase leading-none tracking-[0.14em] text-white",
+              compact
+                ? "text-[7px] sm:text-[8px]"
+                : "text-[7px] sm:text-[8px] lg:text-[9px]",
+            )}
+          >
+            Consultancy Service
+          </span>
+          <span aria-hidden className="h-px w-3 shrink-0 bg-gold sm:w-4" />
         </span>
         <span
           className={cn(
-            "mt-1.5 flex items-center gap-1.5 font-medium uppercase leading-none",
+            "mt-1.5 font-sans font-semibold uppercase leading-[1.35] tracking-[0.06em] text-gold",
             compact
-              ? "text-[7.5px] tracking-[0.12em]"
-              : "text-[8.5px] tracking-[0.14em] sm:gap-2 sm:text-[9px] sm:tracking-[0.2em]",
+              ? "text-[6.5px] sm:text-[7.5px]"
+              : "text-[6px] sm:mt-2 sm:text-[7.5px] lg:text-[8px]",
           )}
         >
-          <span aria-hidden className="h-px w-3.5 shrink-0 bg-gold sm:w-5" />
-          <span className="min-w-0">{siteConfig.brandService}</span>
-          <span aria-hidden className="h-px w-3.5 shrink-0 bg-gold sm:w-5" />
+          Tax Consultant || Legal Advisor
         </span>
-        <span className="mt-1.5 flex w-full min-w-0 flex-col gap-1">
-          {siteConfig.brandRoleLines.map((line) => (
-            <span
-              key={line}
-              className={cn(
-                "font-extrabold uppercase leading-snug tracking-[0.06em] text-gold [text-shadow:0.35px_0_0_currentColor]",
-                compact
-                  ? "text-[7px] sm:text-[8px]"
-                  : "text-[7px] sm:whitespace-nowrap sm:text-[8px] md:text-[9.5px] md:tracking-[0.1em]",
-              )}
-            >
-              {line}
-            </span>
-          ))}
+        <span
+          className={cn(
+            "font-sans font-semibold uppercase leading-[1.35] tracking-[0.06em] text-gold",
+            compact
+              ? "text-[6.5px] sm:text-[7.5px]"
+              : "text-[6px] sm:text-[7.5px] lg:text-[8px]",
+          )}
+        >
+          Corporate Consultant || Finance Professional
         </span>
       </span>
+      <span className="sr-only">{siteConfig.legalName}</span>
     </Link>
   )
 }
@@ -150,8 +154,8 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-y border-gold/80 bg-navy pt-[env(safe-area-inset-top)]">
-        <div className="mx-auto grid min-h-[76px] max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 py-2 sm:min-h-[88px] sm:gap-4 sm:px-6 sm:py-2.5 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:px-8">
+      <header className="sticky top-0 z-40 overflow-visible border-y border-gold/80 bg-navy pt-[env(safe-area-inset-top)]">
+        <div className="mx-auto grid min-h-[88px] max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-3 py-3 sm:min-h-[96px] sm:gap-5 sm:px-6 sm:py-3.5 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:min-h-[104px] lg:gap-6 lg:px-8 lg:py-3.5">
           <Logo />
 
           <NavLinks />
@@ -159,7 +163,7 @@ export function Header() {
           <div className="flex items-center justify-end gap-2 sm:gap-3">
             <Link
               href="/book"
-              className="hidden border border-gold px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.2em] text-gold transition-colors hover:bg-gold hover:text-navy lg:inline-flex"
+              className="hidden border border-gold px-5 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-gold transition-colors hover:bg-gold hover:text-navy lg:inline-flex"
             >
               Book Appointment
             </Link>

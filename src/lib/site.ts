@@ -20,6 +20,7 @@ export const siteConfig = {
   email: "info@gacs.org.in",
   cin: "U74999UP2022PTC166012",
   registeredName: "Gupta Associate Consultancy Service Private Limited",
+  establishedOn: "31 July 2017",
   incorporatedOn: "20 June 2022",
   address:
     "A19-22, Ground Floor, Baldevi Tower, Suhag Nagar, Firozabad - 283203, U.P - India",
@@ -42,7 +43,7 @@ export const siteConfig = {
     },
   ],
   footerBlurb:
-    "Professional advisory that protects, guides & grows your business.",
+    "Integrated legal, tax, finance and corporate advisory — established 31 July 2017.",
   logo: "/images/logo.png",
   logoWidth: 1254,
   logoHeight: 1254,
@@ -59,24 +60,25 @@ export const navItems = [
 
 export const practiceAreas = [
   {
-    slug: "legal",
+    slug: "taxation",
     number: "01",
-    title: "Legal Advisory & Representation",
+    title: "Taxation & Regulatory",
     topics: [
-      "Civil matters",
-      "Corporate law",
+      "Income tax",
+      "GST advisory",
+      "MCA filings",
       "In-service",
       "Server support",
       "Other services",
     ],
   },
   {
-    slug: "taxation",
+    slug: "legal",
     number: "02",
-    title: "Taxation & Regulatory",
+    title: "Legal Advisory & Representation",
     topics: [
-      "Income tax",
-      "GST advisory",
+      "Civil matters",
+      "Corporate law",
       "In-service",
       "Server support",
       "Other services",
@@ -141,7 +143,7 @@ export const aboutStory = {
   heading:
     "A practice built on long-term client relationships, not transactions.",
   columns: [
-    "Gupta Associate Consultancy Service was formed as a proprietorship in 2017 by Anmol Gupta. The practice began with accounting and taxation, and was incorporated as Gupta Associate Consultancy Service Private Limited on 20 June 2022 (CIN: U74999UP2022PTC166012). It has grown into an integrated advisory firm — serving individuals and businesses under one roof, with advice that works in the real world.",
+    "Gupta Associate Consultancy Service was established on 31 July 2017 by Anmol Gupta as a proprietorship. The practice began with accounting and taxation, and was incorporated as Gupta Associate Consultancy Service Private Limited on 20 June 2022 (CIN: U74999UP2022PTC166012). It has grown into an integrated advisory firm — serving individuals and businesses under one roof, with advice that works in the real world.",
     "The firm later added two senior professionals, CA Nitin Gupta and Adv. Deepak Kumar Jain. It is supported by 20+ team employees, including CAs & CSs — with CS Nimisha Tayal on corporate compliance and Ministry of Corporate Affairs work — each contributing to the GACS standard of care.",
   ],
   stats: [
@@ -376,8 +378,67 @@ export const whyAdvantages = [
 
 export const practiceCatalogue = [
   {
-    slug: "legal",
+    slug: "taxation",
     number: "01",
+    tab: "Tax",
+    title: "Taxation & Regulatory Consultancy",
+    copy: "Complete tax advisory and compliance services across direct and indirect tax laws. In-service, server and other tax support included.",
+    offerings: [
+      {
+        number: "01",
+        title: "In-Service Tax Support",
+        copy: "On-site and in-office tax support — returns, notices and compliance handled at your premises or at GACS.",
+      },
+      {
+        number: "02",
+        title: "Income Tax Consultancy & Compliance",
+        copy: "Accurate income tax planning, computation, filing and compliance management for all client categories.",
+      },
+      {
+        number: "03",
+        title: "GST Advisory & Compliance",
+        copy: "End-to-end GST registration, returns filing, input tax credit management and regulatory advisory.",
+      },
+      {
+        number: "04",
+        title: "GST Notices & Proceedings",
+        copy: "Expert handling of GST show cause notices, hearings and appellate representation.",
+      },
+      {
+        number: "05",
+        title: "Tax Litigation & Representation",
+        copy: "Representation before tax authorities, CIT(A), ITAT and High Courts on disputed matters.",
+      },
+      {
+        number: "06",
+        title: "Tax Planning & Advisory",
+        copy: "Strategic tax planning to optimise liabilities within the law for individuals and business entities.",
+      },
+      {
+        number: "07",
+        title: "TDS & Regulatory Compliance",
+        copy: "TDS computation, deposition, returns filing and ongoing regulatory compliance management.",
+      },
+      {
+        number: "08",
+        title: "MCA Company Filings",
+        copy: "Company and LLP filings with the Ministry of Corporate Affairs — incorporation, annual returns, forms and ongoing MCA compliance.",
+      },
+      {
+        number: "09",
+        title: "Server & Online Tax Support",
+        copy: "Remote filing, digital records and virtual tax advisory through secure online channels.",
+      },
+      {
+        number: "10",
+        title: "Other Tax Services",
+        copy: "Allied taxation and regulatory work connected to your filings, coordinated under the same engagement.",
+      },
+    ],
+  },
+  {
+    slug: "legal",
+    number: "02",
     tab: "Law",
     title: "Legal Advisory & Representation",
     copy: "Expert legal counsel across civil, commercial and corporate matters — from advisory through to representation. In-service, server and other legal support included.",
@@ -426,60 +487,6 @@ export const practiceCatalogue = [
         number: "09",
         title: "Other Legal Services",
         copy: "Allied legal work connected to your matter, coordinated under the same GACS engagement.",
-      },
-    ],
-  },
-  {
-    slug: "taxation",
-    number: "02",
-    tab: "Tax",
-    title: "Taxation & Regulatory Consultancy",
-    copy: "Complete tax advisory and compliance services across direct and indirect tax laws. In-service, server and other tax support included.",
-    offerings: [
-      {
-        number: "01",
-        title: "Income Tax Consultancy & Compliance",
-        copy: "Accurate income tax planning, computation, filing and compliance management for all client categories.",
-      },
-      {
-        number: "02",
-        title: "GST Advisory & Compliance",
-        copy: "End-to-end GST registration, returns filing, input tax credit management and regulatory advisory.",
-      },
-      {
-        number: "03",
-        title: "GST Notices & Proceedings",
-        copy: "Expert handling of GST show cause notices, hearings and appellate representation.",
-      },
-      {
-        number: "04",
-        title: "Tax Litigation & Representation",
-        copy: "Representation before tax authorities, CIT(A), ITAT and High Courts on disputed matters.",
-      },
-      {
-        number: "05",
-        title: "Tax Planning & Advisory",
-        copy: "Strategic tax planning to optimise liabilities within the law for individuals and business entities.",
-      },
-      {
-        number: "06",
-        title: "TDS & Regulatory Compliance",
-        copy: "TDS computation, deposition, returns filing and ongoing regulatory compliance management.",
-      },
-      {
-        number: "07",
-        title: "In-Service Tax Support",
-        copy: "On-site and in-office tax support — returns, notices and compliance handled at your premises or at GACS.",
-      },
-      {
-        number: "08",
-        title: "Server & Online Tax Support",
-        copy: "Remote filing, digital records and virtual tax advisory through secure online channels.",
-      },
-      {
-        number: "09",
-        title: "Other Tax Services",
-        copy: "Allied taxation and regulatory work connected to your filings, coordinated under the same engagement.",
       },
     ],
   },

@@ -6,8 +6,8 @@ import {
 } from "@/lib/site"
 
 export const serviceSlugs = [
-  "legal",
   "taxation",
+  "legal",
   "business",
   "finance",
 ] as const

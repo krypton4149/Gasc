@@ -57,6 +57,10 @@ export const metadata: Metadata = {
     "corporate consultant",
     "finance professional",
   ],
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", type: "image/png" }],
+  },
   openGraph: {
     title: siteConfig.legalName,
     description: siteConfig.description,

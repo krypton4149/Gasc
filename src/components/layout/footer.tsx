@@ -15,8 +15,8 @@ const quickLinks = [
 ] as const
 
 const practiceLinks = [
-  { href: "/services#legal", label: "Legal Advisory" },
   { href: "/services#taxation", label: "Tax Consultancy" },
+  { href: "/services#legal", label: "Legal Advisory" },
   { href: "/services#business", label: "Business Consultancy" },
   { href: "/services#finance", label: "Finance & Accounting" },
 ] as const
@@ -65,36 +65,16 @@ export function Footer() {
         className="h-px w-full bg-[linear-gradient(to_right,transparent_0%,#c79a32_50%,transparent_100%)]"
       />
       <div className="grid min-w-0 gap-10 py-12 pl-4 pr-4 sm:gap-12 sm:py-16 sm:pl-5 sm:pr-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 lg:pl-8 xl:pl-10">
-        <div className="min-w-0 max-w-xs">
-          <Link href="/" className="flex items-center gap-3">
+        <div className="min-w-0 max-w-sm">
+          <Link href="/" className="inline-flex w-full max-w-[17.5rem] sm:max-w-[19rem]">
             <Image
               src={siteConfig.logo}
               alt={`${siteConfig.brandName} logo`}
-              width={siteConfig.logoWidth}
-              height={siteConfig.logoHeight}
-              className="size-11 shrink-0 object-contain"
+              width={1774}
+              height={887}
+              className="h-auto w-full object-contain object-left"
               unoptimized
             />
-            <span className="flex min-w-0 flex-col items-start justify-center text-left">
-              <span className="font-sans text-[15px] font-bold uppercase leading-none tracking-[0.08em] text-white">
-                {siteConfig.brandName}
-              </span>
-              <span className="mt-1.5 flex items-center gap-2 font-sans text-[8px] font-medium uppercase leading-none tracking-[0.18em] text-white">
-                <span aria-hidden className="h-px w-4 bg-gold" />
-                {siteConfig.brandService}
-                <span aria-hidden className="h-px w-4 bg-gold" />
-              </span>
-              <span className="mt-1.5 flex w-full flex-col gap-1">
-                {siteConfig.brandRoleLines.map((line) => (
-                  <span
-                    key={line}
-                    className="font-sans text-[8px] font-extrabold uppercase leading-snug tracking-[0.06em] text-gold [text-shadow:0.35px_0_0_currentColor]"
-                  >
-                    {line}
-                  </span>
-                ))}
-              </span>
-            </span>
           </Link>
           <div className="mt-4 h-px w-full bg-gold" />
           <p className="mt-5 max-w-xs font-sans text-sm leading-6 text-warm/80">
