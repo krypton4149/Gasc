@@ -1,7 +1,7 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Clock, Mail } from "lucide-react"
 
+import { BrandLogo } from "@/components/layout/brand-logo"
 import { SocialLinks } from "@/components/layout/social-links"
 import { practiceAreas, siteConfig } from "@/lib/site"
 
@@ -66,16 +66,7 @@ export function Footer() {
       />
       <div className="grid min-w-0 gap-10 py-12 pl-4 pr-4 sm:gap-12 sm:py-16 sm:pl-5 sm:pr-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 lg:pl-8 xl:pl-10">
         <div className="min-w-0 max-w-sm">
-          <Link href="/" className="inline-flex w-full max-w-[17.5rem] sm:max-w-[19rem]">
-            <Image
-              src={siteConfig.logo}
-              alt={`${siteConfig.brandName} logo`}
-              width={1774}
-              height={887}
-              className="h-auto w-full object-contain object-left"
-              unoptimized
-            />
-          </Link>
+          <BrandLogo />
           <div className="mt-4 h-px w-full bg-gold" />
           <p className="mt-5 max-w-xs font-sans text-sm leading-6 text-warm/80">
             {siteConfig.footerBlurb}
